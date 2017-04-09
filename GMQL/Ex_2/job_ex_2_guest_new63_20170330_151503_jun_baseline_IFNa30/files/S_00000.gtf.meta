@@ -1,0 +1,206 @@
+JUN_BASELINE.ID	1269
+JUN_BASELINE.ID	1270
+JUN_BASELINE.ID	609
+JUN_BASELINE.antibody	c-Jun
+JUN_BASELINE.antibody_antibodyDescription	Rabbit polyclonal to amino acids 1-79 mapping at the N-terminus of c-Jun p39 of human origin. Antibody Target: JUN
+JUN_BASELINE.antibody_lab	Snyder
+JUN_BASELINE.antibody_label	c-Jun (sc-1694)
+JUN_BASELINE.antibody_lots	C2206
+JUN_BASELINE.antibody_orderUrl	http://www.scbt.com/product.php?datasheet=1694
+JUN_BASELINE.antibody_tag	CJUN
+JUN_BASELINE.antibody_target	JUN
+JUN_BASELINE.antibody_targetClass	TFSS
+JUN_BASELINE.antibody_targetDescription	Heterodimer of Fos and Jun constitute transcription factor AP1. Proto-oncogene c-Jun is a leucine-zipper.
+JUN_BASELINE.antibody_targetId	GeneCard:JUN
+JUN_BASELINE.antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=JUN
+JUN_BASELINE.antibody_type	Antibody
+JUN_BASELINE.antibody_validation	Human_-_c-Jun(Immunoprecipitation,Motif_Enrichment):human_c-Jun_validation_Snyder.pdf Mouse_-_c-Jun(Immunoprecipitation,ChIP-seq):mouse_c-Jun_validation_Snyder.pdf
+JUN_BASELINE.antibody_vendorId	sc-1694
+JUN_BASELINE.antibody_vendorName	Santa Cruz Biotechnology
+JUN_BASELINE.cell	K562
+JUN_BASELINE.cell_color	46,0,184
+JUN_BASELINE.cell_description	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC
+JUN_BASELINE.cell_karyotype	cancer
+JUN_BASELINE.cell_lineage	mesoderm
+JUN_BASELINE.cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-243&Template=cellBiology
+JUN_BASELINE.cell_organism	human
+JUN_BASELINE.cell_protocol	ENCODE:K562_protocol.pdf
+JUN_BASELINE.cell_sex	F
+JUN_BASELINE.cell_tag	K562
+JUN_BASELINE.cell_termId	BTO:0000664
+JUN_BASELINE.cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000664
+JUN_BASELINE.cell_tier	1
+JUN_BASELINE.cell_tissue	blood
+JUN_BASELINE.cell_type	Cell Line
+JUN_BASELINE.cell_vendorId	CCL-243
+JUN_BASELINE.cell_vendorName	ATCC
+JUN_BASELINE.composite	wgEncodeAwgTfbsUniform
+JUN_BASELINE.composite	wgEncodeSydhTfbs
+JUN_BASELINE.control	IgG-rab
+JUN_BASELINE.control	std
+JUN_BASELINE.controlId	wgEncodeEH000615
+JUN_BASELINE.controlId	wgEncodeEH001795
+JUN_BASELINE.control_description	Input signal from Normal Rabbit IgG ChIP-seq.
+JUN_BASELINE.control_description	Standard input signal for most experiments.
+JUN_BASELINE.control_label	IgG-rab
+JUN_BASELINE.control_label	Standard Control
+JUN_BASELINE.control_tag	IGGRAB
+JUN_BASELINE.control_tag	STD
+JUN_BASELINE.control_type	control
+JUN_BASELINE.dataType	ChipSeq
+JUN_BASELINE.dataType_dataGroup	TFBS & Histones
+JUN_BASELINE.dataType_description	Chromatin IP Sequencing
+JUN_BASELINE.dataType_label	ChIP-seq
+JUN_BASELINE.dataType_tag	CHIPSEQ
+JUN_BASELINE.dataType_type	dataType
+JUN_BASELINE.dataVersion	ENCODE Jul 2012 Freeze
+JUN_BASELINE.dataVersion	ENCODE Mar 2012 Freeze
+JUN_BASELINE.dateSubmitted	2011-06-03
+JUN_BASELINE.dateSubmitted	2012-06-30
+JUN_BASELINE.dateUnrestricted	2012-03-03
+JUN_BASELINE.dateUnrestricted	2013-03-30
+JUN_BASELINE.dccAccession	wgEncodeEH000620
+JUN_BASELINE.dccAccession	wgEncodeEH003369
+JUN_BASELINE.geoSampleAccession	GSM1003609
+JUN_BASELINE.geoSampleAccession	GSM935411
+JUN_BASELINE.grant	Snyder
+JUN_BASELINE.grant_description	Snyder
+JUN_BASELINE.grant_grantInst	Stanford
+JUN_BASELINE.grant_projectName	SYDH
+JUN_BASELINE.grant_tag	SNYDER
+JUN_BASELINE.grant_type	grant
+JUN_BASELINE.lab	Stanford
+JUN_BASELINE.lab	Yale
+JUN_BASELINE.lab_description	Snyder - Stanford University
+JUN_BASELINE.lab_description	Snyder - Yale University
+JUN_BASELINE.lab_grantPi	Snyder
+JUN_BASELINE.lab_labInst	Stanford
+JUN_BASELINE.lab_labInst	Yale
+JUN_BASELINE.lab_labPi	Snyder
+JUN_BASELINE.lab_labPiFull	Michael Snyder
+JUN_BASELINE.lab_label	Snyder - Stanford
+JUN_BASELINE.lab_label	Snyder - Yale
+JUN_BASELINE.lab_organism	human
+JUN_BASELINE.lab_tag	STANFORD
+JUN_BASELINE.lab_tag	YALE
+JUN_BASELINE.lab_type	lab
+JUN_BASELINE.md5sum	6159820c58e84a99842a9ebbb7fa7ef1
+JUN_BASELINE.md5sum	7ed01cd027c0414c49da3f4df1c41fe1
+JUN_BASELINE.md5sum	e66b2414940814db9b3349c7870d8629
+JUN_BASELINE.origAssembly	hg18
+JUN_BASELINE.project	wgEncode
+JUN_BASELINE.setType	exp
+JUN_BASELINE.size	144K
+JUN_BASELINE.size	188K
+JUN_BASELINE.size	343K
+JUN_BASELINE.subId	4165
+JUN_BASELINE.subId	7295
+JUN_BASELINE.tableName	wgEncodeAwgTfbsSydhK562CjunUniPk
+JUN_BASELINE.tableName	wgEncodeSydhTfbsK562CjunIggrabPk
+JUN_BASELINE.tableName	wgEncodeSydhTfbsK562CjunStdPk
+JUN_BASELINE.treatment	None
+JUN_BASELINE.treatment_description	No special treatment or protocol applies
+JUN_BASELINE.treatment_label	No treatment or prot
+JUN_BASELINE.treatment_tag	NONE
+JUN_BASELINE.treatment_type	control
+JUN_BASELINE.type	narrowPeak
+JUN_BASELINE.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgTfbsUniform/wgEncodeAwgTfbsSydhK562CjunUniPk.narrowPeak.gz
+JUN_BASELINE.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunIggrabPk.narrowPeak.gz
+JUN_BASELINE.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunStdPk.narrowPeak.gz
+JUN_BASELINE.view	Peaks
+JUN_BASELINE.view_description	Regions of enriched signal in experiment
+JUN_BASELINE.view_label	Peaks
+JUN_BASELINE.view_tag	PKS
+JUN_BASELINE.view_type	view
+JUN_IFNa30.ID	1265
+JUN_IFNa30.ID	605
+JUN_IFNa30.antibody	c-Jun
+JUN_IFNa30.antibody_antibodyDescription	Rabbit polyclonal to amino acids 1-79 mapping at the N-terminus of c-Jun p39 of human origin. Antibody Target: JUN
+JUN_IFNa30.antibody_lab	Snyder
+JUN_IFNa30.antibody_label	c-Jun (sc-1694)
+JUN_IFNa30.antibody_lots	C2206
+JUN_IFNa30.antibody_orderUrl	http://www.scbt.com/product.php?datasheet=1694
+JUN_IFNa30.antibody_tag	CJUN
+JUN_IFNa30.antibody_target	JUN
+JUN_IFNa30.antibody_targetClass	TFSS
+JUN_IFNa30.antibody_targetDescription	Heterodimer of Fos and Jun constitute transcription factor AP1. Proto-oncogene c-Jun is a leucine-zipper.
+JUN_IFNa30.antibody_targetId	GeneCard:JUN
+JUN_IFNa30.antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=JUN
+JUN_IFNa30.antibody_type	Antibody
+JUN_IFNa30.antibody_validation	Human_-_c-Jun(Immunoprecipitation,Motif_Enrichment):human_c-Jun_validation_Snyder.pdf Mouse_-_c-Jun(Immunoprecipitation,ChIP-seq):mouse_c-Jun_validation_Snyder.pdf
+JUN_IFNa30.antibody_vendorId	sc-1694
+JUN_IFNa30.antibody_vendorName	Santa Cruz Biotechnology
+JUN_IFNa30.cell	K562
+JUN_IFNa30.cell_color	46,0,184
+JUN_IFNa30.cell_description	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC
+JUN_IFNa30.cell_karyotype	cancer
+JUN_IFNa30.cell_lineage	mesoderm
+JUN_IFNa30.cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-243&Template=cellBiology
+JUN_IFNa30.cell_organism	human
+JUN_IFNa30.cell_protocol	ENCODE:K562_protocol.pdf
+JUN_IFNa30.cell_sex	F
+JUN_IFNa30.cell_tag	K562
+JUN_IFNa30.cell_termId	BTO:0000664
+JUN_IFNa30.cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000664
+JUN_IFNa30.cell_tier	1
+JUN_IFNa30.cell_tissue	blood
+JUN_IFNa30.cell_type	Cell Line
+JUN_IFNa30.cell_vendorId	CCL-243
+JUN_IFNa30.cell_vendorName	ATCC
+JUN_IFNa30.composite	wgEncodeAwgTfbsUniform
+JUN_IFNa30.composite	wgEncodeSydhTfbs
+JUN_IFNa30.control	std
+JUN_IFNa30.controlId	wgEncodeEH000655
+JUN_IFNa30.control_description	Standard input signal for most experiments.
+JUN_IFNa30.control_label	Standard Control
+JUN_IFNa30.control_tag	STD
+JUN_IFNa30.control_type	control
+JUN_IFNa30.dataType	ChipSeq
+JUN_IFNa30.dataType_dataGroup	TFBS & Histones
+JUN_IFNa30.dataType_description	Chromatin IP Sequencing
+JUN_IFNa30.dataType_label	ChIP-seq
+JUN_IFNa30.dataType_tag	CHIPSEQ
+JUN_IFNa30.dataType_type	dataType
+JUN_IFNa30.dataVersion	ENCODE Mar 2012 Freeze
+JUN_IFNa30.dateSubmitted	2011-09-29
+JUN_IFNa30.dateUnrestricted	2012-06-29
+JUN_IFNa30.dccAccession	wgEncodeEH002805
+JUN_IFNa30.geoSampleAccession	GSM935521
+JUN_IFNa30.grant	Snyder
+JUN_IFNa30.grant_description	Snyder
+JUN_IFNa30.grant_grantInst	Stanford
+JUN_IFNa30.grant_projectName	SYDH
+JUN_IFNa30.grant_tag	SNYDER
+JUN_IFNa30.grant_type	grant
+JUN_IFNa30.lab	Stanford
+JUN_IFNa30.labVersion	PeakSeq1.0
+JUN_IFNa30.lab_description	Snyder - Stanford University
+JUN_IFNa30.lab_grantPi	Snyder
+JUN_IFNa30.lab_labInst	Stanford
+JUN_IFNa30.lab_labPi	Snyder
+JUN_IFNa30.lab_labPiFull	Michael Snyder
+JUN_IFNa30.lab_label	Snyder - Stanford
+JUN_IFNa30.lab_organism	human
+JUN_IFNa30.lab_tag	STANFORD
+JUN_IFNa30.lab_type	lab
+JUN_IFNa30.md5sum	1f9d7b9a010e07c19113f25635dc0d41
+JUN_IFNa30.md5sum	7b1865f2f2f20a58c79238dd48cb3b4f
+JUN_IFNa30.project	wgEncode
+JUN_IFNa30.setType	exp
+JUN_IFNa30.size	213K
+JUN_IFNa30.size	725K
+JUN_IFNa30.subId	4932
+JUN_IFNa30.tableName	wgEncodeAwgTfbsSydhK562CjunIfna30UniPk
+JUN_IFNa30.tableName	wgEncodeSydhTfbsK562CjunIfna30StdPk
+JUN_IFNa30.treatment	IFNa30
+JUN_IFNa30.treatment_description	30 m of Interferon alpha (Snyder)
+JUN_IFNa30.treatment_tag	IFNA30
+JUN_IFNa30.treatment_type	treatment
+JUN_IFNa30.type	narrowPeak
+JUN_IFNa30.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgTfbsUniform/wgEncodeAwgTfbsSydhK562CjunIfna30UniPk.narrowPeak.gz
+JUN_IFNa30.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunIfna30StdPk.narrowPeak.gz
+JUN_IFNa30.view	Peaks
+JUN_IFNa30.view_description	Regions of enriched signal in experiment
+JUN_IFNa30.view_label	Peaks
+JUN_IFNa30.view_tag	PKS
+JUN_IFNa30.view_type	view

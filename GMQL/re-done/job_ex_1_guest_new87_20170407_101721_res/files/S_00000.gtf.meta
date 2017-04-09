@@ -1,0 +1,285 @@
+H3K4me1.ID	58
+H3K4me1.antibody	H3K4me1
+H3K4me1.antibody_antibodyDescription	Rabbit polyclonal affinity purified. Antibody Target: H3K4me1
+H3K4me1.antibody_lab	Bernstein, Ren, Hardison
+H3K4me1.antibody_label	H3K4me1 (ab8895)
+H3K4me1.antibody_lots	383111 720417
+H3K4me1.antibody_orderUrl	http://www.abcam.com/index.html?datasheet=8895
+H3K4me1.antibody_tag	H3K04ME1
+H3K4me1.antibody_target	H3K4me1
+H3K4me1.antibody_targetDescription	Histone H3 (mono methyl K4). Is associated with enhancers, and downstream of transcription starts.
+H3K4me1.antibody_targetId	GeneCard:HIST2H3C
+H3K4me1.antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=HIST2H3C
+H3K4me1.antibody_type	Antibody
+H3K4me1.antibody_validation	Human_-_H3K4me1(ab8895)(Dot_blot):human_H3K4me1_ab8895_validation_Bernstein.pdf Mouse_-_H3K4me1(ab8895)(Dot_blot,Western_blot):mouse_H3K4me1_ab8895_validation_Ren.pdf Mouse_-_H3K4me1(ab8895)(Dot_blot):mouse_H3K4me1_ab8895_validation_Hardison.pdf
+H3K4me1.antibody_vendorId	ab8895
+H3K4me1.antibody_vendorName	abcam
+H3K4me1.cell	A549
+H3K4me1.cell_description	epithelial cell line derived from a lung carcinoma tissue. (PMID: 175022), "This line was initiated in 1972 by D.J. Giard, et al. through explant culture of lung carcinomatous tissue from a 58-year-old caucasian male." - ATCC, newly promoted to tier 2: not in 2011 analysis
+H3K4me1.cell_karyotype	cancer
+H3K4me1.cell_lineage	endoderm
+H3K4me1.cell_lots	58483235
+H3K4me1.cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-185&Template=cellBiology
+H3K4me1.cell_organism	human
+H3K4me1.cell_protocol	Myers:A549_protocol.pdf Crawford:A549_Crawford_protocol.pdf Stam:A549_Stam_protocol.pdf
+H3K4me1.cell_sex	M
+H3K4me1.cell_tag	A549
+H3K4me1.cell_termId	BTO:0000018
+H3K4me1.cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000018
+H3K4me1.cell_tier	2
+H3K4me1.cell_tissue	epithelium
+H3K4me1.cell_type	Cell Line
+H3K4me1.cell_vendorId	CCL-185
+H3K4me1.cell_vendorName	ATCC
+H3K4me1.composite	wgEncodeBroadHistone
+H3K4me1.control	std
+H3K4me1.controlId	wgEncodeEH003076
+H3K4me1.control_description	Standard input signal for most experiments.
+H3K4me1.control_label	Standard Control
+H3K4me1.control_tag	STD
+H3K4me1.control_type	control
+H3K4me1.dataType	ChipSeq
+H3K4me1.dataType_dataGroup	TFBS & Histones
+H3K4me1.dataType_description	Chromatin IP Sequencing
+H3K4me1.dataType_label	ChIP-seq
+H3K4me1.dataType_tag	CHIPSEQ
+H3K4me1.dataType_type	dataType
+H3K4me1.dataVersion	ENCODE Jul 2012 Freeze
+H3K4me1.dateSubmitted	2012-07-25
+H3K4me1.dateUnrestricted	2013-04-25
+H3K4me1.dccAccession	wgEncodeEH003122
+H3K4me1.geoSampleAccession	GSM1003453
+H3K4me1.grant	Bernstein
+H3K4me1.grant_description	Bernstein
+H3K4me1.grant_grantInst	Broad Institute
+H3K4me1.grant_projectName	Broad
+H3K4me1.grant_tag	BERNSTEIN
+H3K4me1.grant_type	grant
+H3K4me1.lab	Broad
+H3K4me1.lab_description	Bernstein - Broad Institute
+H3K4me1.lab_grantPi	Bernstein
+H3K4me1.lab_labInst	Broad Institute
+H3K4me1.lab_labPi	Bernstein
+H3K4me1.lab_labPiFull	Bradley Bernstein
+H3K4me1.lab_label	Bernstein - Broad Institute
+H3K4me1.lab_organism	human
+H3K4me1.lab_tag	BROAD
+H3K4me1.lab_type	lab
+H3K4me1.md5sum	747954fd84acce311e88601a09db3cff
+H3K4me1.origAssembly	hg19
+H3K4me1.project	wgEncode
+H3K4me1.seqPlatform	Illumina_HiSeq_2000
+H3K4me1.seqPlatform_description	Illumina HiSeq 2000
+H3K4me1.seqPlatform_geoPlatformName	Illumina HiSeq 2000
+H3K4me1.seqPlatform_label	Illumina HiSeq 2000
+H3K4me1.seqPlatform_tag	ILLUMINAHISEQ2000
+H3K4me1.seqPlatform_type	seqPlatform
+H3K4me1.setType	exp
+H3K4me1.size	2.1M
+H3K4me1.softwareVersion	ScriptureVPaperR3
+H3K4me1.subId	7627
+H3K4me1.tableName	wgEncodeBroadHistoneA549H3k04me1Etoh02Pk
+H3K4me1.treatment	EtOH_0.02pct
+H3K4me1.treatment_description	1 h with 0.02% Ethanol (Myers)
+H3K4me1.treatment_label	EtOH 0.02% 1h
+H3K4me1.treatment_tag	ETOH02
+H3K4me1.treatment_type	treatment
+H3K4me1.type	broadPeak
+H3K4me1.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeBroadHistone/wgEncodeBroadHistoneA549H3k04me1Etoh02Pk.broadPeak.gz
+H3K4me1.view	Peaks
+H3K4me1.view_description	Regions of enriched signal in experiment
+H3K4me1.view_label	Peaks
+H3K4me1.view_tag	PKS
+H3K4me1.view_type	view
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.ID	66
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody	H3K27ac
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_antibodyDescription	Rabbit polyclonal. Antibody Target: H3K27ac
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_lab	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_label	H3K27ac (ab4729)
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_lots	31456
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_orderUrl	http://www.abcam.com/index.html?datasheet=4729
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_tag	H3K27AC
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_target	H3K27ac
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_targetDescription	Histone H3 (acetyl K27). As with H3K9ac, associated with transcriptional initiation and open chromatin structure. It remains unknown whether acetylation has can have different consequences depending on the specific lysine residue targeted. In general, though, there appears to be high redundancy. Histone acetylation is notable for susceptibility to small molecules and drugs that target histone deacetylases.
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_targetId	GeneCard:HIST2H3C
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=HIST2H3C
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_type	Antibody
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_validation	Human_-_H3K27ac(Dot_blot):human_H3K27ac_validation_Bernstein.pdf
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_vendorId	ab4729
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.antibody_vendorName	abcam
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell	A549
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_description	epithelial cell line derived from a lung carcinoma tissue. (PMID: 175022), "This line was initiated in 1972 by D.J. Giard, et al. through explant culture of lung carcinomatous tissue from a 58-year-old caucasian male." - ATCC, newly promoted to tier 2: not in 2011 analysis
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_karyotype	cancer
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_lineage	endoderm
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_lots	58483235
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-185&Template=cellBiology
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_organism	human
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_protocol	Myers:A549_protocol.pdf Crawford:A549_Crawford_protocol.pdf Stam:A549_Stam_protocol.pdf
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_sex	M
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_tag	A549
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_termId	BTO:0000018
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000018
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_tier	2
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_tissue	epithelium
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_type	Cell Line
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_vendorId	CCL-185
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.cell_vendorName	ATCC
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.composite	wgEncodeBroadHistone
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.control	std
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.controlId	wgEncodeEH003076
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.control_description	Standard input signal for most experiments.
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.control_label	Standard Control
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.control_tag	STD
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.control_type	control
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType	ChipSeq
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType_dataGroup	TFBS & Histones
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType_description	Chromatin IP Sequencing
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType_label	ChIP-seq
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType_tag	CHIPSEQ
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataType_type	dataType
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dataVersion	ENCODE Jul 2012 Freeze
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dateSubmitted	2012-07-25
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dateUnrestricted	2013-04-25
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.dccAccession	wgEncodeEH003118
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.geoSampleAccession	GSM1003578
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant_description	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant_grantInst	Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant_projectName	Broad
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant_tag	BERNSTEIN
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.grant_type	grant
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab	Broad
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_description	Bernstein - Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_grantPi	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_labInst	Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_labPi	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_labPiFull	Bradley Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_label	Bernstein - Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_organism	human
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_tag	BROAD
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.lab_type	lab
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.md5sum	c3226656a30cb49127afe0f2623baa25
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.origAssembly	hg19
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.project	wgEncode
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform	Illumina_HiSeq_2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform_description	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform_geoPlatformName	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform_label	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform_tag	ILLUMINAHISEQ2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.seqPlatform_type	seqPlatform
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.setType	exp
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.size	830K
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.softwareVersion	ScriptureVPaperR3
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.subId	7624
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.tableName	wgEncodeBroadHistoneA549H3k27acEtoh02Pk
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.treatment	EtOH_0.02pct
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.treatment_description	1 h with 0.02% Ethanol (Myers)
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.treatment_label	EtOH 0.02% 1h
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.treatment_tag	ETOH02
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.treatment_type	treatment
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.type	broadPeak
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeBroadHistone/wgEncodeBroadHistoneA549H3k27acEtoh02Pk.broadPeak.gz
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.view	Peaks
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.view_description	Regions of enriched signal in experiment
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.view_label	Peaks
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.view_tag	PKS
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K27ac.view_type	view
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.ID	58
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody	H3K4me1
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_antibodyDescription	Rabbit polyclonal affinity purified. Antibody Target: H3K4me1
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_lab	Bernstein, Ren, Hardison
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_label	H3K4me1 (ab8895)
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_lots	383111 720417
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_orderUrl	http://www.abcam.com/index.html?datasheet=8895
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_tag	H3K04ME1
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_target	H3K4me1
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_targetDescription	Histone H3 (mono methyl K4). Is associated with enhancers, and downstream of transcription starts.
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_targetId	GeneCard:HIST2H3C
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=HIST2H3C
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_type	Antibody
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_validation	Human_-_H3K4me1(ab8895)(Dot_blot):human_H3K4me1_ab8895_validation_Bernstein.pdf Mouse_-_H3K4me1(ab8895)(Dot_blot,Western_blot):mouse_H3K4me1_ab8895_validation_Ren.pdf Mouse_-_H3K4me1(ab8895)(Dot_blot):mouse_H3K4me1_ab8895_validation_Hardison.pdf
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_vendorId	ab8895
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.antibody_vendorName	abcam
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell	A549
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_description	epithelial cell line derived from a lung carcinoma tissue. (PMID: 175022), "This line was initiated in 1972 by D.J. Giard, et al. through explant culture of lung carcinomatous tissue from a 58-year-old caucasian male." - ATCC, newly promoted to tier 2: not in 2011 analysis
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_karyotype	cancer
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_lineage	endoderm
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_lots	58483235
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-185&Template=cellBiology
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_organism	human
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_protocol	Myers:A549_protocol.pdf Crawford:A549_Crawford_protocol.pdf Stam:A549_Stam_protocol.pdf
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_sex	M
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_tag	A549
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_termId	BTO:0000018
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000018
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_tier	2
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_tissue	epithelium
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_type	Cell Line
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_vendorId	CCL-185
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.cell_vendorName	ATCC
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.composite	wgEncodeBroadHistone
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.control	std
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.controlId	wgEncodeEH003076
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.control_description	Standard input signal for most experiments.
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.control_label	Standard Control
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.control_tag	STD
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.control_type	control
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType	ChipSeq
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType_dataGroup	TFBS & Histones
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType_description	Chromatin IP Sequencing
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType_label	ChIP-seq
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType_tag	CHIPSEQ
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataType_type	dataType
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dataVersion	ENCODE Jul 2012 Freeze
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dateSubmitted	2012-07-25
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dateUnrestricted	2013-04-25
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.dccAccession	wgEncodeEH003122
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.geoSampleAccession	GSM1003453
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant_description	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant_grantInst	Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant_projectName	Broad
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant_tag	BERNSTEIN
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.grant_type	grant
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab	Broad
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_description	Bernstein - Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_grantPi	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_labInst	Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_labPi	Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_labPiFull	Bradley Bernstein
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_label	Bernstein - Broad Institute
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_organism	human
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_tag	BROAD
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.lab_type	lab
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.md5sum	747954fd84acce311e88601a09db3cff
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.origAssembly	hg19
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.project	wgEncode
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform	Illumina_HiSeq_2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform_description	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform_geoPlatformName	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform_label	Illumina HiSeq 2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform_tag	ILLUMINAHISEQ2000
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.seqPlatform_type	seqPlatform
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.setType	exp
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.size	2.1M
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.softwareVersion	ScriptureVPaperR3
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.subId	7627
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.tableName	wgEncodeBroadHistoneA549H3k04me1Etoh02Pk
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.treatment	EtOH_0.02pct
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.treatment_description	1 h with 0.02% Ethanol (Myers)
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.treatment_label	EtOH 0.02% 1h
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.treatment_tag	ETOH02
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.treatment_type	treatment
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.type	broadPeak
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeBroadHistone/wgEncodeBroadHistoneA549H3k04me1Etoh02Pk.broadPeak.gz
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.view	Peaks
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.view_description	Regions of enriched signal in experiment
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.view_label	Peaks
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.view_tag	PKS
+H3K4me1_H3K27ac_PROMOTER.H3K4me1_H3K27ac.H3K4me1.view_type	view
+H3K4me1_H3K27ac_PROMOTER.PROMOTER.annotation_type	promoter
+H3K4me1_H3K27ac_PROMOTER.PROMOTER.assembly	hg19
+H3K4me1_H3K27ac_PROMOTER.PROMOTER.name	CampanerPromoters
+H3K4me1_H3K27ac_PROMOTER.PROMOTER.original_provider	Campaner
+H3K4me1_H3K27ac_PROMOTER.PROMOTER.provider	POLIMI
+regionCount	88540

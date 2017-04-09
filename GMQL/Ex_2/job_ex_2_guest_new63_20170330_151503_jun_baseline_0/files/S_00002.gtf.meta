@@ -1,0 +1,75 @@
+ID	609
+antibody	c-Jun
+antibody_antibodyDescription	Rabbit polyclonal to amino acids 1-79 mapping at the N-terminus of c-Jun p39 of human origin. Antibody Target: JUN
+antibody_lab	Snyder
+antibody_label	c-Jun (sc-1694)
+antibody_lots	C2206
+antibody_orderUrl	http://www.scbt.com/product.php?datasheet=1694
+antibody_tag	CJUN
+antibody_target	JUN
+antibody_targetClass	TFSS
+antibody_targetDescription	Heterodimer of Fos and Jun constitute transcription factor AP1. Proto-oncogene c-Jun is a leucine-zipper.
+antibody_targetId	GeneCard:JUN
+antibody_targetUrl	http://www.genecards.org/cgi-bin/carddisp.pl?gene=JUN
+antibody_type	Antibody
+antibody_validation	Human_-_c-Jun(Immunoprecipitation,Motif_Enrichment):human_c-Jun_validation_Snyder.pdf Mouse_-_c-Jun(Immunoprecipitation,ChIP-seq):mouse_c-Jun_validation_Snyder.pdf
+antibody_vendorId	sc-1694
+antibody_vendorName	Santa Cruz Biotechnology
+cell	K562
+cell_color	46,0,184
+cell_description	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC
+cell_karyotype	cancer
+cell_lineage	mesoderm
+cell_orderUrl	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-243&Template=cellBiology
+cell_organism	human
+cell_protocol	ENCODE:K562_protocol.pdf
+cell_sex	F
+cell_tag	K562
+cell_termId	BTO:0000664
+cell_termUrl	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000664
+cell_tier	1
+cell_tissue	blood
+cell_type	Cell Line
+cell_vendorId	CCL-243
+cell_vendorName	ATCC
+composite	wgEncodeAwgTfbsUniform
+control	std
+controlId	wgEncodeEH000615
+control_description	Standard input signal for most experiments.
+control_label	Standard Control
+control_tag	STD
+control_type	control
+dataType	ChipSeq
+dataType_dataGroup	TFBS & Histones
+dataType_description	Chromatin IP Sequencing
+dataType_label	ChIP-seq
+dataType_tag	CHIPSEQ
+dataType_type	dataType
+dataVersion	ENCODE Mar 2012 Freeze
+dccAccession	wgEncodeEH000620
+lab	Yale
+lab_description	Snyder - Yale University
+lab_grantPi	Snyder
+lab_labInst	Yale
+lab_labPi	Snyder
+lab_labPiFull	Michael Snyder
+lab_label	Snyder - Yale
+lab_organism	human
+lab_tag	YALE
+lab_type	lab
+md5sum	6159820c58e84a99842a9ebbb7fa7ef1
+project	wgEncode
+size	188K
+tableName	wgEncodeAwgTfbsSydhK562CjunUniPk
+treatment	None
+treatment_description	No special treatment or protocol applies
+treatment_label	No treatment or prot
+treatment_tag	NONE
+treatment_type	control
+type	narrowPeak
+url	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgTfbsUniform/wgEncodeAwgTfbsSydhK562CjunUniPk.narrowPeak.gz
+view	Peaks
+view_description	Regions of enriched signal in experiment
+view_label	Peaks
+view_tag	PKS
+view_type	view

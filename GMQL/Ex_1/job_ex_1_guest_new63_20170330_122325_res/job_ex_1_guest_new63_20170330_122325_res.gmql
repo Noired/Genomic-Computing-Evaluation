@@ -1,0 +1,63 @@
+H3K27ac_0 = SELECT(treatment == 'EtOH_0.02pct' AND antibody_target == 'H3K27ac' ) HG19_ENCODE_BROAD;
+H3K27me3_0 = SELECT(treatment == 'EtOH_0.02pct' AND antibody_target == 'H3K27me3') HG19_ENCODE_BROAD;
+H3K4me1_0 = SELECT(treatment == 'EtOH_0.02pct' AND antibody_target == 'H3K4me1' AND cell == 'A549') HG19_ENCODE_BROAD;
+
+GENE = SELECT(provider == 'RefSeq' AND annotation_type == 'gene') HG19_BED_ANNOTATION;
+
+H3K27ac = COVER(1,ANY; aggregate: BAG(name)) H3K27ac_0;
+H3K27me3 = COVER(1,ANY; aggregate: BAG(name)) H3K27me3_0;
+H3K4me1 = COVER(1,ANY; aggregate: BAG(name)) H3K4me1_0;
+
+TSS_0 = PROJECT(region_update: stop AS start+1) GENE;
+TSS = COVER(1,ANY; aggregate: BAG(name)) TSS_0;
+
+PROMOTER = PROJECT(region_update: start AS start - 2000, stop AS start + 1000) TSS;
+
+H3K4me1_H3K27ac = JOIN(distance<0; output: INT) H3K4me1 H3K27ac; # 1 sample expected, ACTIVE
+H3K4me1_H3K27me3 = JOIN(distance<0; output: INT) H3K4me1 H3K27me3; #1 sample expected, REPRESSED
+
+H3K4me1_H3K27ac_H3K27me3 = JOIN(distance<0; output: INT) H3K4me1_H3K27ac H3K4me1_H3K27me3; # 1 sample expected, POISED
+
+H3K4me1_H3K27ac_PROMOTER = JOIN(distance<0; output: INT) H3K4me1_H3K27ac PROMOTER; # 1 sample expected
+
+RES = JOIN(distance > 10000, mindistance(1); output: RIGHT) H3K4me1_H3K27ac_PROMOTER H3K4me1; # mind possible duplicates
+
+MATERIALIZE RES INTO res;
+
+
+### updated version ###
+
+H3K4me1_0 = SELECT(treatment == 'EtOH_0.02pct' AND dataType == 'ChipSeq' AND type == 'broadPeak' AND antibody_target == 'H3K4me1' AND cell == 'A549') HG19_ENCODE_BROAD;
+
+PROMOTER_0 = SELECT(annotation_type == 'promoter') HG19_BED_ANNOTATION;
+
+H3K27me3_0 = SELECT(treatment == 'EtOH_0.02pct' AND dataType == 'ChipSeq' AND type == 'broadPeak' AND antibody_target == 'H3K27me3') HG19_ENCODE_BROAD;
+
+H3K27ac_0 = SELECT(treatment == 'EtOH_0.02pct' AND dataType == 'ChipSeq' AND type == 'broadPeak' AND antibody_target == 'H3K27ac') HG19_ENCODE_BROAD;
+
+H3K27ac = COVER(1,ANY; aggregate: BAG(name)) H3K27ac_0;
+H3K27me3 = COVER(1,ANY; aggregate: BAG(name)) H3K27me3_0;
+H3K4me1 = COVER(1,ANY; aggregate: BAG(name)) H3K4me1_0;
+PROMOTER = COVER(1,ANY; aggregate: BAG(name)) PROMOTER_0;
+
+H3K4me1_H3K27ac = JOIN(distance<0; output: INT) H3K4me1 H3K27ac; # 1 sample expected, ACTIVE
+H3K4me1_H3K27me3 = JOIN(distance<0; output: INT) H3K4me1 H3K27me3; #1 sample expected, REPRESSED
+
+H3K4me1_H3K27ac_H3K27me3 = JOIN(distance<0; output: INT) H3K4me1_H3K27ac H3K4me1_H3K27me3; # 1 sample expected, POISED
+
+H3K4me1_H3K27ac_PROMOTER = JOIN(distance<0; output: INT) H3K4me1_H3K27ac PROMOTER; # 1 sample expected
+
+RES_0 = JOIN(distance > 10000, mindistance(1); output: RIGHT) H3K4me1_H3K27ac_PROMOTER H3K4me1; # mind possible duplicates
+
+RES = EXTEND(regionCount AS COUNT()) RES_0;
+
+MATERIALIZE RES INTO res;
+
+
+## time: 
+
+15 sec for pending
+
+2 min and 20 sec for running
+
+

@@ -1,0 +1,8 @@
+annotation_type
+	gene	1
+assembly
+	hg19	1
+name
+	RefSeqGenes	1
+provider
+	RefSeq	1

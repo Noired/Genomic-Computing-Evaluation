@@ -1,0 +1,24 @@
+JUN_BASELINE_0 = SELECT(cell == 'K562' AND antibody_target == 'JUN' AND dataType == 'ChipSeq' AND treatment == 'None') HG19_ENCODE_NARROW; # 3 samples
+MATERIALIZE JUN_BASELINE_0 INTO jun_baseline_0;
+JUN_BASELINE = COVER(1, ANY; aggregate: BAG(name)) JUN_BASELINE_0; # 1 sample
+MATERIALIZE JUN_BASELINE INTO jun_baseline;
+
+JUN_IFNa30_0 = SELECT(cell == 'K562' AND antibody_target == 'JUN' AND dataType == 'ChipSeq' AND treatment == 'IFNa30') HG19_ENCODE_NARROW; # 2 samples
+MATERIALIZE JUN_IFNa30_0 INTO jun_IFNa30_0;
+JUN_IFNa30 = COVER(1, ANY; aggregate: BAG(name)) JUN_IFNa30_0; # 1 sample
+MATERIALIZE JUN_IFNa30 INTO jun_IFNa30;
+
+GENE = SELECT(provider == 'RefSeq' AND annotation_type == 'gene') HG19_BED_ANNOTATION;
+
+TSS_0 = PROJECT(region_update: stop AS start+1) GENE;
+TSS = COVER(1,ANY; aggregate: BAG(name)) TSS_0;
+
+PROMOTER = PROJECT(region_update: start AS start - 2000, stop AS start + 1000) TSS; # 1 sample
+MATERIALIZE PROMOTER INTO promoter;
+
+JUN_BASELINE_IFNa30 = JOIN(distance<0; output: INT) JUN_BASELINE JUN_IFNa30;
+MATERIALIZE JUN_BASELINE_IFNa30 INTO jun_baseline_IFNa30;
+
+RES = JOIN(distance<0; output: LEFT) PROMOTER JUN_BASELINE_IFNa30;
+
+MATERIALIZE RES INTO res;

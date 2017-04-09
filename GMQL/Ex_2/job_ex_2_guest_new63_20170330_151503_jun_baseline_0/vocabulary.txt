@@ -1,0 +1,201 @@
+antibody
+	c-Jun	3
+antibody_antibodyDescription
+	Rabbit polyclonal to amino acids 1-79 mapping at the N-terminus of c-Jun p39 of human origin. Antibody Target: JUN	3
+antibody_lab
+	Snyder	3
+antibody_label
+	c-Jun (sc-1694)	3
+antibody_lots
+	C2206	3
+antibody_orderUrl
+	http://www.scbt.com/product.php?datasheet=1694	3
+antibody_tag
+	CJUN	3
+antibody_target
+	JUN	3
+antibody_targetClass
+	TFSS	3
+antibody_targetDescription
+	Heterodimer of Fos and Jun constitute transcription factor AP1. Proto-oncogene c-Jun is a leucine-zipper.	3
+antibody_targetId
+	GeneCard:JUN	3
+antibody_targetUrl
+	http://www.genecards.org/cgi-bin/carddisp.pl?gene=JUN	3
+antibody_type
+	Antibody	3
+antibody_validation
+	Human_-_c-Jun(Immunoprecipitation,Motif_Enrichment):human_c-Jun_validation_Snyder.pdf Mouse_-_c-Jun(Immunoprecipitation,ChIP-seq):mouse_c-Jun_validation_Snyder.pdf	3
+antibody_vendorId
+	sc-1694	3
+antibody_vendorName
+	Santa Cruz Biotechnology	3
+cell
+	K562	3
+cell_color
+	46,0,184	3
+cell_description
+	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC	3
+cell_karyotype
+	cancer	3
+cell_lineage
+	mesoderm	3
+cell_orderUrl
+	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-243&Template=cellBiology	3
+cell_organism
+	human	3
+cell_protocol
+	ENCODE:K562_protocol.pdf	3
+cell_sex
+	F	3
+cell_tag
+	K562	3
+cell_termId
+	BTO:0000664	3
+cell_termUrl
+	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000664	3
+cell_tier
+	1	3
+cell_tissue
+	blood	3
+cell_type
+	Cell Line	3
+cell_vendorId
+	CCL-243	3
+cell_vendorName
+	ATCC	3
+composite
+	wgEncodeAwgTfbsUniform	1
+	wgEncodeSydhTfbs	2
+control
+	IgG-rab	1
+	std	2
+control_description
+	Input signal from Normal Rabbit IgG ChIP-seq.	1
+	Standard input signal for most experiments.	2
+control_label
+	IgG-rab	1
+	Standard Control	2
+control_tag
+	IGGRAB	1
+	STD	2
+control_type
+	control	3
+controlId
+	wgEncodeEH000615	2
+	wgEncodeEH001795	1
+dataType
+	ChipSeq	3
+dataType_dataGroup
+	TFBS & Histones	3
+dataType_description
+	Chromatin IP Sequencing	3
+dataType_label
+	ChIP-seq	3
+dataType_tag
+	CHIPSEQ	3
+dataType_type
+	dataType	3
+dataVersion
+	ENCODE Jul 2012 Freeze	1
+	ENCODE Mar 2012 Freeze	2
+dateSubmitted
+	2011-06-03	1
+	2012-06-30	1
+dateUnrestricted
+	2012-03-03	1
+	2013-03-30	1
+dccAccession
+	wgEncodeEH000620	2
+	wgEncodeEH003369	1
+geoSampleAccession
+	GSM1003609	1
+	GSM935411	1
+grant
+	Snyder	2
+grant_description
+	Snyder	2
+grant_grantInst
+	Stanford	2
+grant_projectName
+	SYDH	2
+grant_tag
+	SNYDER	2
+grant_type
+	grant	2
+ID
+	1269	1
+	1270	1
+	609	1
+lab
+	Stanford	1
+	Yale	2
+lab_description
+	Snyder - Stanford University	1
+	Snyder - Yale University	2
+lab_grantPi
+	Snyder	3
+lab_label
+	Snyder - Stanford	1
+	Snyder - Yale	2
+lab_labInst
+	Stanford	1
+	Yale	2
+lab_labPi
+	Snyder	3
+lab_labPiFull
+	Michael Snyder	3
+lab_organism
+	human	3
+lab_tag
+	STANFORD	1
+	YALE	2
+lab_type
+	lab	3
+md5sum
+	6159820c58e84a99842a9ebbb7fa7ef1	1
+	7ed01cd027c0414c49da3f4df1c41fe1	1
+	e66b2414940814db9b3349c7870d8629	1
+origAssembly
+	hg18	1
+project
+	wgEncode	3
+setType
+	exp	2
+size
+	144K	1
+	188K	1
+	343K	1
+subId
+	4165	1
+	7295	1
+tableName
+	wgEncodeAwgTfbsSydhK562CjunUniPk	1
+	wgEncodeSydhTfbsK562CjunIggrabPk	1
+	wgEncodeSydhTfbsK562CjunStdPk	1
+treatment
+	None	3
+treatment_description
+	No special treatment or protocol applies	3
+treatment_label
+	No treatment or prot	3
+treatment_tag
+	NONE	3
+treatment_type
+	control	3
+type
+	narrowPeak	3
+url
+	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgTfbsUniform/wgEncodeAwgTfbsSydhK562CjunUniPk.narrowPeak.gz	1
+	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunIggrabPk.narrowPeak.gz	1
+	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunStdPk.narrowPeak.gz	1
+view
+	Peaks	3
+view_description
+	Regions of enriched signal in experiment	3
+view_label
+	Peaks	3
+view_tag
+	PKS	3
+view_type
+	view	3

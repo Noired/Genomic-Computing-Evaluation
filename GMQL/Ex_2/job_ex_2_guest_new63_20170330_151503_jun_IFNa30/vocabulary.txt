@@ -1,0 +1,178 @@
+antibody
+	c-Jun	1
+antibody_antibodyDescription
+	Rabbit polyclonal to amino acids 1-79 mapping at the N-terminus of c-Jun p39 of human origin. Antibody Target: JUN	1
+antibody_lab
+	Snyder	1
+antibody_label
+	c-Jun (sc-1694)	1
+antibody_lots
+	C2206	1
+antibody_orderUrl
+	http://www.scbt.com/product.php?datasheet=1694	1
+antibody_tag
+	CJUN	1
+antibody_target
+	JUN	1
+antibody_targetClass
+	TFSS	1
+antibody_targetDescription
+	Heterodimer of Fos and Jun constitute transcription factor AP1. Proto-oncogene c-Jun is a leucine-zipper.	1
+antibody_targetId
+	GeneCard:JUN	1
+antibody_targetUrl
+	http://www.genecards.org/cgi-bin/carddisp.pl?gene=JUN	1
+antibody_type
+	Antibody	1
+antibody_validation
+	Human_-_c-Jun(Immunoprecipitation,Motif_Enrichment):human_c-Jun_validation_Snyder.pdf Mouse_-_c-Jun(Immunoprecipitation,ChIP-seq):mouse_c-Jun_validation_Snyder.pdf	1
+antibody_vendorId
+	sc-1694	1
+antibody_vendorName
+	Santa Cruz Biotechnology	1
+cell
+	K562	1
+cell_color
+	46,0,184	1
+cell_description
+	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC	1
+cell_karyotype
+	cancer	1
+cell_lineage
+	mesoderm	1
+cell_orderUrl
+	http://www.atcc.org/ATCCAdvancedCatalogSearch/ProductDetails/tabid/452/Default.aspx?ATCCNum=CCL-243&Template=cellBiology	1
+cell_organism
+	human	1
+cell_protocol
+	ENCODE:K562_protocol.pdf	1
+cell_sex
+	F	1
+cell_tag
+	K562	1
+cell_termId
+	BTO:0000664	1
+cell_termUrl
+	http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=BTO&termId=BTO%3A0000664	1
+cell_tier
+	1	1
+cell_tissue
+	blood	1
+cell_type
+	Cell Line	1
+cell_vendorId
+	CCL-243	1
+cell_vendorName
+	ATCC	1
+composite
+	wgEncodeAwgTfbsUniform	1
+	wgEncodeSydhTfbs	1
+control
+	std	1
+control_description
+	Standard input signal for most experiments.	1
+control_label
+	Standard Control	1
+control_tag
+	STD	1
+control_type
+	control	1
+controlId
+	wgEncodeEH000655	1
+dataType
+	ChipSeq	1
+dataType_dataGroup
+	TFBS & Histones	1
+dataType_description
+	Chromatin IP Sequencing	1
+dataType_label
+	ChIP-seq	1
+dataType_tag
+	CHIPSEQ	1
+dataType_type
+	dataType	1
+dataVersion
+	ENCODE Mar 2012 Freeze	1
+dateSubmitted
+	2011-09-29	1
+dateUnrestricted
+	2012-06-29	1
+dccAccession
+	wgEncodeEH002805	1
+geoSampleAccession
+	GSM935521	1
+grant
+	Snyder	1
+grant_description
+	Snyder	1
+grant_grantInst
+	Stanford	1
+grant_projectName
+	SYDH	1
+grant_tag
+	SNYDER	1
+grant_type
+	grant	1
+ID
+	1265	1
+	605	1
+lab
+	Stanford	1
+lab_description
+	Snyder - Stanford University	1
+lab_grantPi
+	Snyder	1
+lab_label
+	Snyder - Stanford	1
+lab_labInst
+	Stanford	1
+lab_labPi
+	Snyder	1
+lab_labPiFull
+	Michael Snyder	1
+lab_organism
+	human	1
+lab_tag
+	STANFORD	1
+lab_type
+	lab	1
+labVersion
+	PeakSeq1.0	1
+md5sum
+	1f9d7b9a010e07c19113f25635dc0d41	1
+	7b1865f2f2f20a58c79238dd48cb3b4f	1
+project
+	wgEncode	1
+setType
+	exp	1
+size
+	213K	1
+	725K	1
+subId
+	4932	1
+tableName
+	wgEncodeAwgTfbsSydhK562CjunIfna30UniPk	1
+	wgEncodeSydhTfbsK562CjunIfna30StdPk	1
+treatment
+	IFNa30	1
+treatment_description
+	30 m of Interferon alpha (Snyder)	1
+treatment_tag
+	IFNA30	1
+treatment_type
+	treatment	1
+type
+	narrowPeak	1
+url
+	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgTfbsUniform/wgEncodeAwgTfbsSydhK562CjunIfna30UniPk.narrowPeak.gz	1
+	http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeSydhTfbs/wgEncodeSydhTfbsK562CjunIfna30StdPk.narrowPeak.gz	1
+view
+	Peaks	1
+view_description
+	Regions of enriched signal in experiment	1
+view_label
+	Peaks	1
+view_tag
+	PKS	1
+view_type
+	view	1
