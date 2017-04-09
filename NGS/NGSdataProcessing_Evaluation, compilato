@@ -1,0 +1,251 @@
+# user = yourself!
+##### login
+    	ssh user@grid.ieo.eu
+    	IMPORTANT: qlogin
+
+##### start working
+    	cd cd
+	mkdir homework
+	cd homework
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/gata1.fastq .
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/tal1.fastq .
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/input.fastq .
+	ln -sn /home/lriva/public_html/lesson/chromsizes.tab .
+
+##### these three fastq files contain the results of 2 ChIP-seq experiments and 1 control experiment.
+##### GATA1 and TAL1 are two mouse transcription factors, please check out the details for these samples here:
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923575
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923582
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923585
+##### the .sra raw data were downloaded and they were converted in fatstq files using the fastq-dump utility
+##### we took 10 million reads out of those files, corresponding to 40 million lines of the fastq files
+
+##### part1: checking the quality of the raw data
+	1.1) use the /home/lriva/FastQC/fastqc tool to get a report for the quality for these three fastq files; write here below the commands that you would use for this purpose
+
+	/home/lriva/FastQC/fastqc gata1.fastq
+	/home/lriva/FastQC/fastqc tal1.fastq
+	/home/lriva/FastQC/fastqc input.fastq
+
+	1.2) what is the length of the reads? Inspect the fastq files and the fastqc report
+	
+	less gata1.fastq
+	less tal1.fastq
+	less input.fastq
+	
+	(length 41 for all from the fastq)
+
+##### part2: filtering the raw data
+	# hints: "command -h" for help; append -Q 33 after the call of each fasts toolkit command
+	# es: fastx_quality_stats -h for help
+	# es: fastx_quality_stats -Q 33 ... for calling
+	# input for each command should be the output of the previous one
+	# for each of the following points, write below the commands that you would use to perform the required task
+	2.1) use the fastx_artifacts_filter to remove artefacts
+	
+	fastx_artifacts_filter -Q 33 -v -i gata1.fastq -o gata1_artifacts.fastq
+	fastx_artifacts_filter -Q 33 -v -i tal1.fastq -o tal1_artifacts.fastq
+	fastx_artifacts_filter -Q 33 -v -i input.fastq -o input_artifacts.fastq
+	
+	2.2) use fastq_quality_trimmer to trim based with quality lower than 20, requiring a min final length of 30nt
+
+	fastq_quality_trimmer -Q 33 -v -t 20 -l 30 -i gata1_artifacts.fastq -o gata1_artifacts_trim.fastq
+	fastq_quality_trimmer -Q 33 -v -t 20 -l 30 -i tal1_artifacts.fastq -o tal1_artifacts_trim.fastq
+	fastq_quality_trimmer -Q 33 -v -t 20 -l 30 -i input_artifacts.fastq -o input_artifacts_trim.fastq	
+
+	2.3) use fastq_quality_filter to keep only those reads with al least 80% of high quality bases (quality > 20)
+	
+	fastq_quality_filter -Q 33 -v -q 21 -p 80 -i gata1_artifacts_trim.fastq -o gata1_artifacts_trim_quality.fastq
+	fastq_quality_filter -Q 33 -v -q 21 -p 80 -i tal1_artifacts_trim.fastq -o tal1_artifacts_trim_quality.fastq
+	fastq_quality_filter -Q 33 -v -q 21 -p 80 -i input_artifacts_trim.fastq -o input_artifacts_trim_quality.fastq
+
+
+##### part 3: checking the quality of the filtered data
+	3.1) use the /home/lriva/FastQC/fastqc tool to get a report for the quality for the filtered fastq files
+	
+	/home/lriva/FastQC/fastqc gata1_artifacts_trim_quality.fastq
+	/home/lriva/FastQC/fastqc tal1_artifacts_trim_quality.fastq
+	/home/lriva/FastQC/fastqc input_artifacts_trim_quality.fastq
+	
+	3.2) compare the results of 3.1) with 1.1) and briefly describe differences
+
+	see the sheet	
+
+	3.3) which sample got the more reads discarded? how many reads still remain for this sample?
+
+	see the terminal output
+
+##### part 4: reads alignment
+	# hints: you can find the mm9 genome here: /db/bwa/0.6.2/mm9/mm9
+	4.1) align the reads to the mm9 mouse genome; for each of the tasks here below, write below the commands that you would use to perform the required task
+		4.1.1) determine the .sai file containing the bwa index alignments using the "bwa align" command
+			
+		bwa aln -t4 -f gata1.sai /db/bwa/0.6.2/mm9/mm9 gata1_artifacts_trim_quality.fastq
+
+		…
+		
+		4.1.2) convert these coordinates in genomic coordinates using the "bwa samse" command, export the results using "samtools view" and finally sort the aligned reads based on their genomic positions using "samtools sort"
+
+		…
+		
+		4.1.3) create an index files for quick access to the .bam file using the "samtools index" command
+
+		
+
+	4.2) What is the percentage of reads succesfully aligned? use the "samtools view" command playing with the "-c" and "-F 4" options; answer for all three filtered fastq files, also writing the commands that you would use to perform the required task
+
+	samtools view -F 4 -c gata1.bam
+
+	8606362	/ 9537867 = 0.9023361303
+
+	samtools view -F 4 -c tal1.bam
+	
+	9292370 / 9621097 = 0.9658326904
+	
+	samtools view -F 4 -c input.bam
+
+	9303996 / 9546484 = 0.9745992347
+
+	4.3) repeat for all three filtered fastq files
+
+##### part 5: peak calling
+	# hints: use the "macs14" command with both the ChIP (-t) and the shared control (-c) experiments
+	# additional MACS settings have to include the pvalue to 1e-8, the genome to mm, the reads length to what determined in 1.2) and the --diag flag to perform the saturation analysis
+	5.1) use MACS to call ChIP-seq peaks; write here below the commands that you would use to perform the required task
+
+	macs14 -t gata1.bam -c input.bam -n gata1 -m 10,30 -f BAM -p 1e-8 -g mm -s 41 --diag
+	macs14 -t tal1.bam -c input.bam -n tal1 -m 10,30 -f BAM -p 1e-8 -g mm -s 41 --diag
+
+	5.2) how many positive and negative peaks were identified? (where negative peaks, in MACS terms, could be intended here as False Positives)
+	
+	gata1:
+
+	positive: 2626
+	negative: 7
+
+
+###########################  check!
+
+	tal1:
+
+	positive: 1576
+	negative: 7
+
+###########################
+
+	
+	5.3) what is the overall expected False Discovery Rate?
+
+	'expected' estimated by the means of the sample average…
+
+	Q1 = V1/R1 = 7/2626 = 0,00266565118
+	Q2 = V2/R2 = 7/1576 = 0,00416243655
+
+	E[Q] = (Q1+Q2)/2 = 0,003414043865  #################### ?
+
+	we can possibly consider to go for an average over all the FDR for each peak called. -> to better understand
+	
+	5.4) Regarding the False Negatives, what are gata1 and tal1 saturation levels with 90% of the reads at an enrichment level of 20-40 fold?
+
+	gata1: (second row, third column) 90.28
+	tal1: 96.38
+	
+
+##### part 6: indentifying the binding events shared by the two transcription factors and those that are specific
+	6.1) use the "intersectBed" command to identify how many peaks are shared between gata1 and tal1, based on the output of 5.1); write here below the commands that you would use to perform the required task and report the number of found peaks
+
+	bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -wa > int.bed
+	wc -l int.bed
+	
+	1228 found -wb would have worked as well
+
+	6.2) check the documentation of the "intersectBed" command to identify how many peaks are specific for GATA1; write here below the commands that you would use to perform the required task and report the number of found peaks
+	
+	bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -u > int_gata1.bed
+	wc -l int_gata1.bed
+	
+	1226 found
+
+
+	actually maybe it is better to use -v… specific probably means peaks in gata1 but not in tal1.
+	
+	bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -v > int_gata1.bed
+	wc -l int_gata1.bed
+
+	1377 found
+
+############################ here the question may be intended as the peaks which are in data but not in tal
+
+##### part 7: displaying the results in the genome browser
+	7.1) generate the bw files to be exported in the genome browser; for each of the subtask here below, write below the commands that you would use to perform the required task
+		7.1.1) convert the bam files in bed files using the "bamToBed" command
+		
+		samtools rmdup -s gata1.bam gata1.nodup.bam
+		samtools rmdup -s tal1.bam tal1.nodup.bam
+		samtools rmdup -s input.bam input.nodup.bam
+		
+		bamToBed -i gata1.nodup.bam > gata1.bed
+		bamToBed -i tal1.nodup.bam > tal1.bed
+		bamToBed -i input.nodup.bam > input.bed
+		
+		7.1.2) create in silico extension of the peaks coordinates adding 160 bases to the right side in a strand specific manner, use the "slopBed" command
+		
+		bedtools slop -i gata1.bed -g chromsizes.tab -s -l 0 -r 160 > gata1_slop.bed
+		bedtools slop -i tal1.bed -g chromsizes.tab -s -l 0 -r 160 > tal1_slop.bed
+		bedtools slop -i input.bed -g chromsizes.tab -s -l 0 -r 160 > input_slop.bed
+		
+		7.1.3) determine the count of reads for each base in the genome using the "genomeCoverageBed" command
+
+		genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -bg > gata1.wiggle
+		genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -bg > tal1.wiggle
+		genomeCoverageBed -i input_slop.bed -g chromsizes.tab -bg > input.wiggle
+
+		genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -d > gata1_perbase.wiggle
+		genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -d > tal1_perbase.wiggle
+		genomeCoverageBed -i input_slop.bed -g chromsizes.tab -d > input_perbase.wiggle
+
+		
+		
+		7.1.4) convert the .wg file in its binary bigwig version using the "wigToBigWig" command
+		
+		wigToBigWig gata1.wiggle chromsizes.tab gata1.bw
+		wigToBigWig tal1.wiggle chromsizes.tab tal1.bw
+		wigToBigWig input.wiggle chromsizes.tab input.bw
+
+	7.2) go to http://genome.ucsc.edu/ and create three custom tracks with the three .bw files created in 7.1.4) using the following notation:
+	track type=bigWig name="transcription factor name" bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homeworkbw/filename.bw
+	# you will use the .bw files contained in the homework directory in place of those created by you ..
+	Provide the screen shot of the created tracks
+	7.3) based on 6.1) and 6.2) identify the genomic coordinates of one shared peak and of one peak specific for GATA1;
+	browse to those locations and generate a plot in the genome browser reporting these two regions
+	Provide the screen shot of the created plot
+
+###### part 8: peaks annotation and motif finding with GREAT
+	8.1) use the "cut" linux command (with the -f argument) to generate the GREAT input files taking the first three columns of the .bed MACS peak files generated at 6.1) and 6.2)
+	
+	cut -f 1-3 int.bed > int_great.bed
+	cut -f 1-3 spec_gata1.bed > spec_gata1_great.bed
+	
+	8.2) go to great.stanford.edu and upload the files obtained in 8.1) matching it to the mouse mm9 genome.
+
+		
+
+	8.3) compare the motifs identified for the two peak sets; provide their screen shots and comment them briefly
+
+	
+	The motifs found for int_great correspond to sequence patterns in gene promoters where both gata1 and tal1 bind.
+
+	attach file
+
+	The motifs found for spec_gata1_great correspond to sequence patterns in gene promoters where only gata1 binds.
+
+	attach file
+
+	"Description
+
+The MSigDB Predicted Promoter Motifs [1] ontology contains sets of genes that share a transcription factor binding site in their promoters. The binding sites are as predicted based on definitions from the TransFac database (version 7.4) [2]."
+	
+
+	IMPORTANT: please use the logout command to exit from qlogin!
+	IMPORTANT: please use the logout command to exit from grid.ieo.eu!
+

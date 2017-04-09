@@ -1,0 +1,48 @@
+Last login: Thu Mar 30 16:43:17 on ttys001
+fab-Book:~ fabriziofrasca$ scp ffrasca@grid.ieo.eu:/mnt/courses/ffrasca/homework/gata1_fastqc.zip ./Desktop
+ffrasca@grid.ieo.eu's password: 
+scp: /mnt/courses/ffrasca/homework/gata1_fastqc.zip: No such file or directory
+fab-Book:~ fabriziofrasca$ ssh ffrasca@grid.ieo.eu
+ffrasca@grid.ieo.eu's password: 
+Linux sge-master 3.2.0-3-amd64 #1 SMP Thu Jun 28 09:07:26 UTC 2012 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Mar 30 16:43:35 2017 from nat131-dot1x.polimi.it
+limiting ffrasca to cpu:600s,mem:300M
+ffrasca@sge-master:~$ qlogin
+local configuration sge-master.bioinfo.ieo.eu not defined - using global configuration
+Your job 480560 ("QLOGIN") has been submitted
+waiting for interactive job to be scheduled ...
+Your interactive job 480560 has been successfully scheduled.
+Establishing /usr/share/gridengine/qlogin-wrapper session to host iit-n2.iit.ieo.eu ...
+Warning: Permanently added '[iit-n2.iit.ieo.eu]:45221,[37.34.32.98]:45221' (RSA) to the list of known hosts.
+ffrasca@iit-n2.iit.ieo.eu's password: 
+Linux iit-n2 3.16.0-0.bpo.4-amd64 #1 SMP Debian 3.16.7-ckt11-1+deb8u3~bpo70+1 (2015-08-08) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Mar 30 15:15:27 2017 from sge-master.bioinfo.ieo.eu
+ffrasca@iit-n2:~$ cd homework/
+ffrasca@iit-n2:~/homework$ wc -l gata1_artifacts_trim_quality.fastq 
+38151468 gata1_artifacts_trim_quality.fastq
+ffrasca@iit-n2:~/homework$ wc -l tal1_artifacts_trim_quality.fastq 
+38484388 tal1_artifacts_trim_quality.fastq
+ffrasca@iit-n2:~/homework$ wc -l input_artifacts_trim_quality.fastq 
+38185936 input_artifacts_trim_quality.fastq
+ffrasca@iit-n2:~/homework$ 
+
+
+
+
+
+
+

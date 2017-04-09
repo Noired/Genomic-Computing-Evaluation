@@ -1,0 +1,229 @@
+
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\title{\textbf{Genomic Computing Evaluation}\\Assignment 3: NGS}
+\author{Fabrizio Frasca}
+\date{\today}
+
+\begin{document}
+	
+\maketitle
+\clearpage
+
+\section*{Introduction}
+
+\begin{verbatim}
+mkdir homework
+cd homework
+ln -sn /home/lriva/lesson/homeworkFastqfiles/gata1.fastq .
+ln -sn /home/lriva/lesson/homeworkFastqfiles/tal1.fastq .
+ln -sn /home/lriva/lesson/homeworkFastqfiles/input.fastq .
+ln -sn /home/lriva/public_html/lesson/chromsizes.tab .
+\end{verbatim}
+
+These three fastq files contain the results of 2 ChIP-seq experiments and 1 control experiment.
+GATA1 and TAL1 are two mouse transcription factors, please check out the details for these samples here:\\
+
+• http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923575
+
+• http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923582
+
+• http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923585\\
+
+
+The .sra raw data were downloaded and they were converted in fatstq files using the fastq-dump utility. We took 10 million reads out of those files, corresponding to 40 million lines of the fastq files
+
+\section{Checking the quality of the raw data}
+
+\subsection{}
+
+\textbf{Use the /home/lriva/FastQC/fastqc tool to get a report for the quality for these three fastq files; write here below the commands that you would use for this purpose}
+
+It is sufficient to run fastqc with the .fastq files as input.
+
+\begin{verbatim}
+/home/lriva/FastQC/fastqc gata1.fastq
+/home/lriva/FastQC/fastqc tal1.fastq
+/home/lriva/FastQC/fastqc input.fastq
+\end{verbatim}
+
+\subsection{}
+\textbf{What is the length of the reads? Inspect the fastq files and the fastqc report}
+
+All the reads have length \textbf{41}. This can be understood by inspecting...
+
+\section{Filtering the raw data}
+
+\subsection{}
+\textbf{Use the fastx\_artifacts\_filter to remove artifacts}
+
+The commands are:
+
+\begin{verbatim}
+fastx_artifacts_filter -Q 33 -v -i gata1.fastq -o gata1_artifacts.fastq
+fastx_artifacts_filter -Q 33 -v -i tal1.fastq -o tal1_artifacts.fastq
+fastx_artifacts_filter -Q 33 -v -i input.fastq -o input_artifacts.fastq
+\end{verbatim}
+
+where I have specified options -Q 33 to refer to the Illumina quality score scale and -i, -o, to specify the input and output files.
+
+\subsection{}
+\textbf{Use fastq\_quality\_trimmer to trim based with quality lower than 20, requiring a min final length of 30nt}
+
+We can use the following commands:
+
+\begin{verbatim}
+fastq_quality_trimmer -Q 33 -v -t 20 -l 30
+    -i gata1_artifacts.fastq -o gata1_artifacts_trim.fastq
+fastq_quality_trimmer -Q 33 -v -t 20 -l 30
+    -i tal1_artifacts.fastq -o tal1_artifacts_trim.fastq
+fastq_quality_trimmer -Q 33 -v -t 20 -l 30
+    -i input_artifacts.fastq -o input_artifacts_trim.fastq	
+\end{verbatim}
+
+where I used -t 20 to set the quality cutoff threshold to 20 and -l 30 to impose the minimum final length to 30 of the trimmed reads.
+
+\subsection{}
+\textbf{Use fastq\_quality\_filter to keep only those reads with al least 80\% of high quality bases (quality $>$ 20)}
+
+The commands are:
+
+\begin{verbatim}
+fastq_quality_filter -Q 33 -v -q 21 -p 80
+   -i gata1_artifacts_trim.fastq -o gata1_artifacts_trim_quality.fastq
+fastq_quality_filter -Q 33 -v -q 21 -p 80
+   -i tal1_artifacts_trim.fastq -o tal1_artifacts_trim_quality.fastq
+fastq_quality_filter -Q 33 -v -q 21 -p 80
+   -i input_artifacts_trim.fastq -o input_artifacts_trim_quality.fastq
+\end{verbatim}
+
+where -p 80 is to enforce that at least 80\% of the bases must be high quality, and -q 21 filters out all the reads with quality smaller than 21. I went for 21 instead of 20 because -q option takes integers values and the requirement was for a quality \textit{strictly} greater than 20.
+
+\section{Checking the quality of the filtered data}
+
+\subsection{}
+\textbf{Use the /home/lriva/FastQC/fastqc tool to get a report for the quality for the filtered fastq files}
+
+The commands are, again:
+
+\begin{verbatim}
+/home/lriva/FastQC/fastqc gata1_artifacts_trim_quality.fastq
+/home/lriva/FastQC/fastqc tal1_artifacts_trim_quality.fastq
+/home/lriva/FastQC/fastqc input_artifacts_trim_quality.fastq
+\end{verbatim}
+
+\subsection{}
+\textbf{Compare the results of 3.1) with 1.1) and briefly describe differences}
+
+I compared the generated files \textit{fastqc\_data.txt} for all the couples: input vs input\_artifacts\_trim\_quality, gata1 vs tal1\_artifacts\_trim\_quality and input vs tal1\_artifacts\_trim\_quality.
+
+In general, it is possible to notice how all the filtering operations together greatly enhanced the average quality of the reads, in particular:\\
+• Each base position has a greater quality, in average\\
+• The quality on the 'tail' is higher and so the average-quality trend tends to be more constant, i.e. there are no drops anymore\\
+• The values on the tail are less dispersed around the mean, i.e. the interquartile difference is smaller\\
+• The 10th percentile on the tail is now much higher than before.\\
+• The count for N bases on the starting and ending positions is greatly reduced, ad this is because such bases are cleaved off by the trimming operation, being very poor quality bases.\\
+
+\subsection{}
+\textbf{Which sample got the more reads discarded? how many reads still remain for this sample?}
+
+Since the initial number of reads was 10 millions for all the three samples, it is sufficient to look for the sample which has the minimum number of lines in the filtered fastq file:
+
+\begin{verbatim}
+$ wc -l gata1_artifacts_trim_quality.fastq 
+38151468 gata1_artifacts_trim_quality.fastq
+
+$ wc -l tal1_artifacts_trim_quality.fastq 
+38484388 tal1_artifacts_trim_quality.fastq
+
+$ wc -l input_artifacts_trim_quality.fastq 
+38185936 input_artifacts_trim_quality.fastq
+\end{verbatim}
+
+The sample with the more reads discarded is \textbf{gata1} and the the number of reads still remaining for that sample is $38,151,468 \div 4$, that is \textbf{9,537,867}.
+
+\section{Reads alignment}
+
+\subsection{}
+Align the reads to the mm9 mouse genome; for each of the tasks here below, write below the commands that you would use to perform the required task
+
+\subsubsection{}
+\textbf{Determine the .sai file containing the bwa index alignments using the "bwa align" command}
+
+\begin{verbatim}
+bwa aln -t4 -f gata1.sai /db/bwa/0.6.2/mm9/mm9
+      gata1_artifacts_trim_quality.fastq
+bwa aln -t4 -f tal1.sai /db/bwa/0.6.2/mm9/mm9
+      tal1_artifacts_trim_quality.fastq
+bwa aln -t4 -f input.sai /db/bwa/0.6.2/mm9/mm9
+      input_artifacts_trim_quality.fastq
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Convert these coordinates in genomic coordinates using the "bwa samse" command, export the results using "samtools view" and finally sort the aligned reads based on their genomic positions using "samtools sort"}
+
+It is convenient the three commands \verb samse , \verb samtools \ \verb view \ and \verb samtools \ \verb sort \ in a pipelined fashion: 
+
+\begin{verbatim}
+bwa samse /db/bwa/0.6.2/mm9/mm9 gata1.sai gata1_artifacts_trim_quality.fastq |
+       samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+       samtools sort - gata1
+bwa samse /db/bwa/0.6.2/mm9/mm9 tal1.sai tal1_artifacts_trim_quality.fastq |
+       samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+       samtools sort - tal1
+bwa samse /db/bwa/0.6.2/mm9/mm9 input.sai input_artifacts_trim_quality.fastq |
+       samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+       samtools sort - input
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Create an index files for quick access to the .bam file using the "samtools index" command}
+
+It is sufficient to call the command \verb samtools \ \verb index \ by passing as input the three .bam files obtained in the step before:
+\begin{verbatim}
+samtools index gata1.bam
+samtools index tal1.bam
+samtools index input.bam
+\end{verbatim}
+
+\subsection{} 
+\textbf{What is the percentage of reads successfully aligned? use the "samtools view" command playing with the "-c" and "-F 4" options; answer for all three filtered fastq files, also writing the commands that you would use to perform the required task}
+
+The three commands below output the number of successfully mapped reads:
+
+\begin{verbatim}
+$ samtools view -F 4 -c gata1.bam
+8606362
+$ samtools view -F 4 -c tal1.bam
+9292370
+$ samtools view -F 4 -c input.bam
+9303996
+\end{verbatim}
+
+Then we can calculate the percentages of successfully mapped reads as follows:
+\\
+$gata1_\text{\%} = 100 \times \dfrac{mapped\ filtered\ reads}{overall\ filtered\ reads} = 100 \times \dfrac{8606362}{9537867} \approx 90.23$\\\\
+$tal1_\text{\%} = 100 \times \dfrac{mapped\ filtered\ reads}{overall\ filtered\ reads} = 100 \times \dfrac{9292370}{9621097} \approx 96.58$\\\\
+$input_\text{\%} = 100 \times \dfrac{mapped\ filtered\ reads}{overall\ filtered\ reads} = 100 \times \dfrac{9303996}{9546484} \approx  97.45$\\
+
+\section{Peak calling}
+
+\subsection{}
+\textbf{Use MACS to call ChIP-seq peaks; write here below the commands that you would use to perform the required task}
+
+\section{Identifying the binding events shared by the two transcription factors and those that are specific}
+
+\section{Displaying the results in the genome browser}
+
+\section{Peaks annotation and motif finding with GREAT}
+
+
+
+
+
+\end{document}
