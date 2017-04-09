@@ -1,0 +1,84 @@
+# user = yourself!
+##### login
+    	ssh user@grid.ieo.eu
+    	IMPORTANT: qlogin
+
+##### start working
+    	cd cd
+	mkdir homework
+	cd homework
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/gata1.fastq .
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/tal1.fastq .
+	ln -sn /home/lriva/lesson/homeworkFastqfiles/input.fastq .
+	ln -sn /home/lriva/public_html/lesson/chromsizes.tab .
+
+##### these three fastq files contain the reults of 2 ChIP-seq experiments and 1 control experiment.
+##### GATA1 and TAL1 are two mouse transcription factors, please check out the details for these samples here:
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923575
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923582
+##### http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM923585
+##### the .sra raw data were downloaded and they were converted in fatstq files using the fastq-dump utility
+##### we took 10 million reads out of those files, corresponding to 40 million lines of the fastq files
+
+##### part1: checking the quality of the raw data
+	1.1) use the /home/lriva/FastQC/fastqc tool to get a report for the quality for these three fastq files; write here below the commands that you would use for this purpose
+	1.2) what is the length of the reads? Inspect the fastq files and the fastqc report
+
+##### part2: filtering the raw data
+	# hints: "command -h" for help; append -Q 33 after the call of each fasts toolkit command
+	# es: fastx_quality_stats -h for help
+	# es: fastx_quality_stats -Q 33 ... for calling
+	# input for each command should be the output of the previous one
+	# for each of the following points, write below the commands that you would use to perform the required task
+	2.1) use the fastx_artifacts_filter to remove artefacts
+	2.2) use fastq_quality_trimmer to trim based with quality lower than 20, requiring a min final length of 30nt
+	2.3) use fastq_quality_filter to keep only those reads with al least 80% of high quality bases (quality > 20)
+
+##### part 3: checking the quality of the filtered data
+	3.1) use the /home/lriva/FastQC/fastqc tool to get a report for the quality for the filtered fastq files
+	3.2) compare the results of 3.1) with 1.1) and briefly describe differences
+	3.3) which sample got the more reads discarded? how many reads still remain for this sample?
+
+##### part 4: reads alignment
+	# hints: you can find the mm9 genome here: /db/bwa/0.6.2/mm9/mm9
+	4.1) align the reads to the mm9 mouse genome; for each of the tasks here below, write below the commands that you would use to perform the required task
+		4.1.1) determine the .sai file containing the bwa index alignments using the "bwa align" command
+		4.1.2) convert these coordinates in genomic coordinates using the "bwa samse" command, export the results using "samtools view" and finally sort the aligned reads based on their genomic positions using "samtools sort"
+		4.1.3) create an index files for quick access to the .bam file using the "samtools index" command
+	4.2) What is the percentage of reads succesfully aligned? use the "samtools view" command playing with the "-c" and "-F 4" options; answer for all three filtered fastq files, also writing the commands that you would use to perform the required task
+	4.3) repeat for all three filtered fastq files
+
+##### part 5: peak calling
+	# hints: use the "macs14" command with both the ChIP (-t) and the shared control (-c) experiments
+	# additional MACS settings have to include the pvalue to 1e-8, the genome to mm, the reads length to what determined in 1.2) and the --diag flag to perform the saturation analysis
+	5.1) use MACS to call ChIP-seq peaks; write here below the commands that you would use to perform the required task
+	5.2) how many positive and negative peaks were identified? (where negative peaks, in MACS terms, could be intended here as False Positives)
+	5.3) what is the overall expected False Discovery Rate?
+	5.4) Regarding the False Negatives, what are gata1 and tal1 saturation levels with 90% of the reads at an enrichment level of 20-40 fold?
+
+##### part 6: indentifying the binding events shared by the two transcription factors and those that are specific
+	6.1) use the "intersectBed" command to identify how many peaks are shared between gata1 and tal1, based on the output of 5.1); write here below the commands that you would use to perform the required task and report the number of found peaks
+	6.2) check the documentation of the "intersectBed" command to identify how many peaks are specific for GATA1; write here below the commands that you would use to perform the required task and report the number of found peaks
+
+##### part 7: displaying the results in the genome browser
+	7.1) generate the bw files to be exported in the genome browser; for each of the subtask here below, write below the commands that you would use to perform the required task
+		7.1.1) convert the bam files in bed files using the "bamToBed" command
+		7.1.2) create in silico extension of the peaks coordinates adding 160 bases to the right side in a strand specific manner, use the "slopBed" command
+		7.1.3) determine the count of reads for each base in the genome using the "genomeCoverageBed" command
+		7.1.4) convert the .wg file in its binary bigwig version using the "wigToBigWig" command
+	7.2) go to http://genome.ucsc.edu/ and create three custom tracks with the three .bw files created in 7.1.4) using the following notation:
+	track type=bigWig name="transcription factor name" bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homeworkbw/filename.bw
+	# you will use the .bw files contained in the homework directory in place of those created by you ..
+	Provide the screen shot of the created tracks
+	7.3) based on 6.1) and 6.2) identify the genomic coordinates of one shared peak and of one peak specific for GATA1;
+	browse to those locations and generate a plot in the genome browser reporting these two regions
+	Provide the screen shot of the created plot
+
+###### part 8: peaks annotation and motif finding with GREAT
+	8.1) use the "cut" linux command (with the -f argument) to generate the GREAT input files taking the first three columns of the .bed MACS peak files generated at 6.1) and 6.2)
+	8.2) go to great.stanford.edu and upload the files obtained in 8.1) matching it to the mouse mm9 genome.
+	8.3) compare the motifs identified for the two peak sets; provide their screen shots and comment them briefly
+
+	IMPORTANT: please use the logout command to exit from qlogin!
+	IMPORTANT: please use the logout command to exit from grid.ieo.eu!
+
