@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  9 APR 2017 12:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  9 APR 2017 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,62 +575,68 @@ lity.fastq[]
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 125--131
+Underfull \hbox (badness 10000) in paragraph at lines 123--129
 
  []
 
 [4]
-Overfull \hbox (91.65024pt too wide) in paragraph at lines 182--182
+Overfull \hbox (91.65024pt too wide) in paragraph at lines 180--180
 []\OT1/cmtt/m/n/12 bwa samse /db/bwa/0.6.2/mm9/mm9 gata1.sai gata1_artifacts_tr
 im_quality.fastq |[] 
  []
 
 [5]
-Overfull \hbox (79.30023pt too wide) in paragraph at lines 182--182
+Overfull \hbox (79.30023pt too wide) in paragraph at lines 180--180
 []\OT1/cmtt/m/n/12 bwa samse /db/bwa/0.6.2/mm9/mm9 tal1.sai tal1_artifacts_trim
 _quality.fastq |[] 
  []
 
 
-Overfull \hbox (91.65024pt too wide) in paragraph at lines 182--182
+Overfull \hbox (91.65024pt too wide) in paragraph at lines 180--180
 []\OT1/cmtt/m/n/12 bwa samse /db/bwa/0.6.2/mm9/mm9 input.sai input_artifacts_tr
 im_quality.fastq |[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--213
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--213
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--213
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
-[6]
-Overfull \hbox (0.18382pt too wide) in paragraph at lines 219--219
+[6] [7]
+Overfull \hbox (0.18382pt too wide) in paragraph at lines 252--252
 \OT1/cmr/bx/n/17.28 the two tran-scrip-tion fac-tors and those that
  []
 
 
-Overfull \hbox (11.52184pt too wide) in paragraph at lines 221--221
+Overfull \hbox (36.07521pt too wide) in paragraph at lines 262--262
+[]\OT1/cmtt/m/n/12 bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -wa 
+> int.bed[] 
+ []
+
+
+Overfull \hbox (11.52184pt too wide) in paragraph at lines 265--265
 []\OT1/cmr/bx/n/17.28 Displaying the re-sults in the genome browser 
  []
 
-[7] (./NGS.aux) ) 
+[8] (./NGS.aux) ) 
 Here is how much of TeX's memory you used:
  2828 strings out of 493014
  36429 string characters out of 6133352
- 107272 words of memory out of 5000000
+ 107288 words of memory out of 5000000
  6331 multiletter control sequences out of 15000+600000
  10756 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,23p,312b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,23p,384b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
@@ -640,10 +646,10 @@ mr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 2.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12
 .pfb>
-Output written on NGS.pdf (7 pages, 102621 bytes).
+Output written on NGS.pdf (8 pages, 107761 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
