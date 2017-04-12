@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  6 APR 2017 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  12 APR 2017 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,7 +524,7 @@ e
 <GC_peaks.png, id=9, 477.785pt x 160.6pt>
 File: GC_peaks.png Graphic file (type png)
  <use GC_peaks.png>
-Package pdftex.def Info: GC_peaks.png used on input line 38.
+Package pdftex.def Info: GC_peaks.png used on input line 37.
 (pdftex.def)             Requested size: 312.00119pt x 104.87396pt.
  [2
 
@@ -532,13 +532,13 @@ Package pdftex.def Info: GC_peaks.png used on input line 38.
 File: regulatory_regions.png Graphic file (type png)
 
 <use regulatory_regions.png>
-Package pdftex.def Info: regulatory_regions.png used on input line 48.
+Package pdftex.def Info: regulatory_regions.png used on input line 47.
 (pdftex.def)             Requested size: 390.0pt x 184.78372pt.
  <CpG_island.png, id=16, 1264.725pt x 551.05875pt>
 File: CpG_island.png Graphic file (type png)
 
 <use CpG_island.png>
-Package pdftex.def Info: CpG_island.png used on input line 65.
+Package pdftex.def Info: CpG_island.png used on input line 64.
 (pdftex.def)             Requested size: 390.0pt x 169.92673pt.
  [3 <./regulatory_regions.png>] [4 <./CpG_island.png>]
 Overfull \hbox (24.40688pt too wide) in paragraph at lines 100--101
@@ -549,7 +549,7 @@ Overfull \hbox (24.40688pt too wide) in paragraph at lines 100--101
 <BLAT_results.png, id=26, 837.1275pt x 299.1175pt>
 File: BLAT_results.png Graphic file (type png)
  <use BLAT_results.png>
-Package pdftex.def Info: BLAT_results.png used on input line 109.
+Package pdftex.def Info: BLAT_results.png used on input line 108.
 (pdftex.def)             Requested size: 390.0pt x 139.34834pt.
 
 [5 <./BLAT_results.png>] (./Genome Browser.aux) ) 
@@ -566,7 +566,7 @@ Here is how much of TeX's memory you used:
 dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "Genome Browser.pdf" (5 pages, 174460 bytes).
+Output written on "Genome Browser.pdf" (5 pages, 174459 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
