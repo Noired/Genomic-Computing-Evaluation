@@ -120,18 +120,17 @@
 	
 	gata1:
 
-	positive: 2626
+	positive: 2603
 	negative: 7
 
 
-###########################  check!
 
 	tal1:
 
-	positive: 1576
+	positive: 1553
 	negative: 7
 
-###########################
+
 
 	
 	5.3) what is the overall expected False Discovery Rate?
@@ -232,18 +231,21 @@
 
 	8.3) compare the motifs identified for the two peak sets; provide their screen shots and comment them briefly
 
-	
-	The motifs found for int_great correspond to sequence patterns in gene promoters where both gata1 and tal1 bind.
+	global image here	
 
-	attach file
+	The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where both gata1 and tal1 bind.
 
-	The motifs found for spec_gata1_great correspond to sequence patterns in gene promoters where only gata1 binds.
+	image here focusing on the motifs
+
+	The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where, specifically, only gata1 binds.
 
 	attach file
 
 	"Description
 
 The MSigDB Predicted Promoter Motifs [1] ontology contains sets of genes that share a transcription factor binding site in their promoters. The binding sites are as predicted based on definitions from the TransFac database (version 7.4) [2]."
+
+	
 	
 
 	IMPORTANT: please use the logout command to exit from qlogin!

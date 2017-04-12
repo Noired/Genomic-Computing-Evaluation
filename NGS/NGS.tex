@@ -1,9 +1,10 @@
-
 \documentclass[12pt, a4paper]{article}
+
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{csquotes}
 
 
 \title{\textbf{Genomic Computing Evaluation}\\Assignment 3: NGS Data Processing}
@@ -225,14 +226,36 @@ macs14 -t tal1.bam -c input.bam -n tal1 -m 10,30
     -f BAM -p 1e-8 -g mm -s 41 --diag
 \end{verbatim}
 
-Among all the other parameters: \verb -p\ is used to set the Pvalue cutoff for peak detection at 1e-8, \verb -g\ is to indicate the genome length is the one of the mouse, \verb -s\ is used to set the tag size to 41 and \verb --diag is to ask macs to perform saturation analysis for peaks in several enrichment-ratio intervals.
+Among all the other parameters: \verb|-p| is used to set the Pvalue cutoff for peak detection at 1e-8, \verb|-g| is to indicate the genome length is the one of the mouse, \verb|-s| is used to set the tag size to 41 and \verb|--diag| is to ask macs to perform saturation analysis for peaks in several enrichment-ratio intervals.
 
 \subsection{}
 \textbf{How many positive and negative peaks were identified? (where negative peaks, in MACS terms, could be intended here as False Positives)}
 
-The number of positive and negative peaks can be retrieved by the number of lines in the ... generated files:
+The number of peaks can be retrieved by counting the number of lines in the \textit{gata1\_peaks.bed} and \textit{tal1\_peaks.bed} generated files:
 
-We have ...
+\begin{verbatim}
+
+$ wc -l gata1_peaks.bed
+2603
+
+$ wc -l tal1_peaks.bed
+1553
+
+\end{verbatim}
+
+The number of negative peaks can instead be computed by \textbf{subtracting $1$} to the number of lines in the \textit{gata1\_negative\_peaks.xls} and the \textit{tal1\_negative\_peaks.xls} generated files. This is because the .xls files contain a one-line header.
+
+\begin{verbatim}
+
+$ wc -l gata1_negative_peaks.xls
+8
+
+$ wc -l tal1_negative_peaks.xls
+8
+
+\end{verbatim}
+
+That is: both tal 1 and gata1 have 7 negative peaks identified.
 
 \subsection{}
 \textbf{What is the overall expected False Discovery Rate?}
@@ -242,11 +265,11 @@ We have ...
 \subsection{}
 \textbf{Regarding the False Negatives, what are gata1 and tal1 saturation levels with 90\% of the reads at an enrichment level of 20-40 fold?}
 
-We can inspect the ... and ... generated files for the value corresponding to the second row () and third column (). We have:
+To answer this question we have to inspect the \textit{gata1\_diag.xls } and \textit{tal1\_diag.xls} generated files. The value at the second row and third column refers to the coverage by a sampling of 90\% for the peaks with an enrichment rate in the interval 20-40, so this is the value we are looking for. We have:\\
 
-gata1: 90.28
+\textbf{gata1}: 90.28
 
-tal1: 96.38
+\textbf{tal1}: 96.38
 
 
 \section{Identifying the binding events shared by the two transcription factors and those that are specific}
@@ -257,19 +280,151 @@ tal1: 96.38
 The commands we can use in order to do this are:
 
 \begin{verbatim}
-$bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -wa > int.bed
-$wc -l int.bed
+$ bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -wa > int.bed
+$ wc -l int.bed
 1228
 \end{verbatim}
 
 The result is that we have 1228 peaks which are shared between the two treatments.
 
+\subsection{}
+\textbf{Check the documentation of the "intersectBed" command to identify how many peaks are specific for GATA1; write here below the commands that you would use to perform the required task and report the number of found peaks}
+
+The option \verb|-v| can be used to extract regions of the "\verb|A|" sample which do not overlap with any region of the "\verb|B|" sample. From the manual:
+\begin{displayquote}
+	\begin{align*}
+		\textbf{-v} \quad & \text{Only report those entries in A that have no overlap in B.}\\
+			                       & \text{Restricted by -f and -r.}
+	\end{align*}
+\end{displayquote}
+
+Thus, we can use the following commands:
+
+\begin{verbatim}
+$ bedtools intersect -a gata1_peaks.bed
+           -b tal1_peaks.bed -v > int_gata1.bed
+$ wc -l int_gata1.bed
+1377
+\end{verbatim}
+
 \section{Displaying the results in the genome browser}
+
+\subsection{}
+\textbf{Generate the bw files to be exported in the genome browser; for each of the subtask here below, write below the commands that you would use to perform the required task}
+
+\subsubsection{}
+\textbf{Convert the bam files in bed files using the "bamToBed" command}
+
+Let's first remove possible duplicates:
+
+\begin{verbatim}
+samtools rmdup -s gata1.bam gata1.nodup.bam
+samtools rmdup -s tal1.bam tal1.nodup.bam
+samtools rmdup -s input.bam input.nodup.bam
+\end{verbatim}
+
+Then we can call the command of interest:
+
+\begin{verbatim}
+bamToBed -i gata1.nodup.bam > gata1.bed
+bamToBed -i tal1.nodup.bam > tal1.bed
+bamToBed -i input.nodup.bam > input.bed
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Create in silico extension of the peaks coordinates adding 160 bases to the right side in a strand specific manner, use the "slopBed" command}
+
+The commands are:
+
+\begin{verbatim}
+bedtools slop -i gata1.bed -g chromsizes.tab -s -l 0 -r 160
+            > gata1_slop.bed
+bedtools slop -i tal1.bed -g chromsizes.tab -s -l 0 -r 160
+            > tal1_slop.bed
+bedtools slop -i input.bed -g chromsizes.tab -s -l 0 -r 160
+            > input_slop.bed
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Determine the count of reads for each base in the genome using the "genomeCoverageBed" command}
+
+In order to determine the count \textit{for each base}, we should use the \verb|-d| option:
+
+\begin{verbatim}
+genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -d
+             > gata1_perbase.wiggle
+genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -d
+             > tal1_perbase.wiggle
+genomeCoverageBed -i input_slop.bed -g chromsizes.tab -d
+             > input_perbase.wiggle
+\end{verbatim}
+
+However, if we want to upload the files on the UCSC genome browser, a more suitable option is to generate the output in bedgraph format, in this way:
+
+\begin{verbatim}
+genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -bg
+            > gata1.wiggle
+genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -bg
+            > tal1.wiggle
+genomeCoverageBed -i input_slop.bed -g chromsizes.tab -bg
+            > input.wiggle
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Convert the .wg file in its binary bigwig version using the "wigToBigWig" command}
+
+It is sufficient to use the commands:
+
+\begin{verbatim}
+wigToBigWig gata1.wiggle chromsizes.tab gata1.bw
+wigToBigWig tal1.wiggle chromsizes.tab tal1.bw
+wigToBigWig input.wiggle chromsizes.tab input.bw
+\end{verbatim}
+
+\subsubsection{}
+\textbf{Go to http://genome.ucsc.edu/ and create three custom tracks with the three .bw files created in 7.1.4) and provide screen-shots of the uploaded tracks}
+
+\subsubsection{}
+\textbf{based on 6.1) and 6.2) identify the genomic coordinates of one shared peak and of one peak specific for GATA1; browse to those locations and generate a plot in the genome browser reporting these two regions, and, finally, provide the screen-shot of the created plot}
+
 
 \section{Peaks annotation and motif finding with GREAT}
 
+\subsection{}
+\textbf{Use the "cut" linux command (with the -f argument) to generate the GREAT input files taking the first three columns of the .bed MACS peak files generated at 6.1) and 6.2)}
 
+In order to take the first three columns only, it is sufficient to use the \verb|-f 1-3| option with the cut command.
 
+\begin{verbatim}
+cut -f 1-3 int.bed > int_great.bed
+cut -f 1-3 spec_gata1.bed > spec_gata1_great.bed
+\end{verbatim}
 
+\subsection{}
+\textbf{Go to great.stanford.edu and upload the files obtained in 8.1) matching it to the mouse mm9 genome. Compare the motifs identified for the two peak sets; provide their screen shots and comment them briefly}
+
+As for the \textit{int\_great.bed} file:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = .99\textwidth]{int_great}
+	\caption{Predicted promoter motifs for the regions where both gata1 and tal1 transcription factors bind.}
+	\label{fig:int_great}
+\end{figure}
+
+The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where \textit{both} gata1 and tal1 bind.
+
+As for the \textit{spec\_gata\_great.bed} file:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = .99\textwidth]{spec_gata_great}
+	\caption{Predicted promoter motifs for the regions where only gata1 transcription factors binds.}
+	\label{fig:spec_gata_great}
+\end{figure}
+
+The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where, specifically, \textit{only} gata1 binds.
+
+The first motifs for both the two GREAT jobs have quite good pvalues.
 
 \end{document}
