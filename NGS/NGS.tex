@@ -382,11 +382,11 @@
 	
 	\begin{verbatim}
 	genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -bg
-	> gata1.wiggle
+	  > gata1.wiggle
 	genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -bg
-	> tal1.wiggle
+	  > tal1.wiggle
 	genomeCoverageBed -i input_slop.bed -g chromsizes.tab -bg
-	> input.wiggle
+	  > input.wiggle
 	\end{verbatim}
 	
 	\subsubsection{}
@@ -403,9 +403,72 @@
 	\subsubsection{}
 	\textbf{Go to http://genome.ucsc.edu/ and create three custom tracks with the three .bw files created in 7.1.4) and provide screen-shots of the uploaded tracks}
 	
-	\subsubsection{}
-	\textbf{based on 6.1) and 6.2) identify the genomic coordinates of one shared peak and of one peak specific for GATA1; browse to those locations and generate a plot in the genome browser reporting these two regions, and, finally, provide the screen-shot of the created plot}
+	The tracks were uploaded by following \verb|My data > Custom Tracks|, by selecting
 	
+	\begin{alignat*}{2}
+	& \text{clade:} && \text{Mammal}\\
+	& \text{genome:} && \text{Mouse}\\
+	& \text{assembly:\quad} && \text{July 2007 (NCBI37/mm9)}\\
+	\end{alignat*}
+	and, finally, by providing the following lines to be submitted:
+	
+	
+	\begin{verbatim}
+	track type=bigWig name="gata1"
+	      bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homeworkbw/gata1.bw
+	
+	track type=bigWig name="tal1"
+	      bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homeworkbw/tal1.bw
+	
+	track type=bigWig name="input"
+	      bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homeworkbw/input.bw
+	\end{verbatim}	
+	
+	Here is a screenshot of the successfully updated tracks:
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 1.15\textwidth, height = .08\textheight]{browser_tracks}
+		\caption{gata1, tal1 and input tracks uploaded on the UCSC genome browser}
+		\label{fig:browser_tracks}
+	\end{figure}
+	
+	\subsubsection{}
+	\textbf{Based on 6.1) and 6.2) identify the genomic coordinates of one shared peak and of one peak specific for GATA1; browse to those locations and generate a plot in the genome browser reporting these two regions, and, finally, provide the screen-shot of the created plot}
+	
+	One shared peak is for the genomic coordinates \verb|chrX:53,981,724-53,982,059| and can be found in the \verb|int.bed| generated file. Figures \ref{fig:browser_int_dense} and \ref{fig:browser_int_full} depict the peaks in the UCSC genome browser.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 1.15\textwidth, height = .08\textheight]{browser_int_dense}
+		\caption{shared peak for the coordinates: chrX:53,981,724-53,982,059, dense visualization}
+		\label{fig:browser_int_dense}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 1.15\textwidth]{browser_int_full}
+		\caption{shared peak for the coordinates: chrX:53,981,724-53,982,059, full visualization}
+		\label{fig:browser_int_full}
+	\end{figure}
+
+	One peak specific for gata1 transcription factor is, instead, for the genomic coordinates \verb|chrX:131,741,773-131,742,135| and can be found in the \verb|int_gata1.bed| generated file. Figures \ref{fig:browser_spec_dense} and \ref{fig:browser_spec_full} depict the peak in the UCSC genome browser. 
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width = 1.15\textwidth, height = .08\textheight]{browser_spec_dense}
+		\caption{specific peak for the coordinates: chrX:131,741,773-131,742,135, dense visualization}
+		\label{fig:browser_spec_dense}
+	\end{figure}
+	
+	\clearpage
+	
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width = 1.15\textwidth]{browser_spec_full}
+		\caption{specific peak for the coordinates: chrX:131,741,773-131,742,135, full visualization}
+		\label{fig:browser_spec_full}
+	\end{figure}
 	
 	\section{Peaks annotation and motif finding with GREAT}
 	
