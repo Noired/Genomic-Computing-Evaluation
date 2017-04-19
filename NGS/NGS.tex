@@ -170,15 +170,18 @@
 	It is convenient the three commands \verb samse , \verb samtools \ \verb view \ and \verb samtools \ \verb sort \ in a pipelined fashion: 
 	
 	\begin{verbatim}
-	bwa samse /db/bwa/0.6.2/mm9/mm9 gata1.sai gata1_artifacts_trim_quality.fastq |
-	samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
-	samtools sort - gata1
-	bwa samse /db/bwa/0.6.2/mm9/mm9 tal1.sai tal1_artifacts_trim_quality.fastq |
-	samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
-	samtools sort - tal1
-	bwa samse /db/bwa/0.6.2/mm9/mm9 input.sai input_artifacts_trim_quality.fastq |
-	samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
-	samtools sort - input
+	bwa samse /db/bwa/0.6.2/mm9/mm9 gata1.sai
+	      gata1_artifacts_trim_quality.fastq |
+	              samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+	              samtools sort - gata1
+	bwa samse /db/bwa/0.6.2/mm9/mm9 tal1.sai
+	      tal1_artifacts_trim_quality.fastq |
+	              samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+	              samtools sort - tal1
+	bwa samse /db/bwa/0.6.2/mm9/mm9 input.sai
+	      input_artifacts_trim_quality.fastq |
+	              samtools view -ut /db/bwa/0.6.2/mm9/mm9 - |
+	              samtools sort - input
 	\end{verbatim}
 	
 	\subsubsection{}
@@ -222,9 +225,9 @@
 	
 	\begin{verbatim}
 	macs14 -t gata1.bam -c input.bam -n gata1 -m 10,30
-	-f BAM -p 1e-8 -g mm -s 41 --diag
+	    -f BAM -p 1e-8 -g mm -s 41 --diag
 	macs14 -t tal1.bam -c input.bam -n tal1 -m 10,30
-	-f BAM -p 1e-8 -g mm -s 41 --diag
+	    -f BAM -p 1e-8 -g mm -s 41 --diag
 	\end{verbatim}
 	
 	Among all the other parameters: \verb|-p| is used to set the Pvalue cutoff for peak detection at 1e-8, \verb|-g| is to indicate the genome length is the one of the mouse, \verb|-s| is used to set the tag size to 41 and \verb|--diag| is to ask macs to perform saturation analysis for peaks in several enrichment-ratio intervals.
@@ -357,11 +360,11 @@
 	
 	\begin{verbatim}
 	bedtools slop -i gata1.bed -g chromsizes.tab -s -l 0 -r 160
-	> gata1_slop.bed
+	  > gata1_slop.bed
 	bedtools slop -i tal1.bed -g chromsizes.tab -s -l 0 -r 160
-	> tal1_slop.bed
+	  > tal1_slop.bed
 	bedtools slop -i input.bed -g chromsizes.tab -s -l 0 -r 160
-	> input_slop.bed
+	  > input_slop.bed
 	\end{verbatim}
 	
 	\subsubsection{}
@@ -371,11 +374,11 @@
 	
 	\begin{verbatim}
 	genomeCoverageBed -i gata1_slop.bed -g chromsizes.tab -d
-	> gata1_perbase.wiggle
+	  > gata1_perbase.wiggle
 	genomeCoverageBed -i tal1_slop.bed -g chromsizes.tab -d
-	> tal1_perbase.wiggle
+	  > tal1_perbase.wiggle
 	genomeCoverageBed -i input_slop.bed -g chromsizes.tab -d
-	> input_perbase.wiggle
+	  > input_perbase.wiggle
 	\end{verbatim}
 	
 	However, if we want to upload the files on the UCSC genome browser, a more suitable option is to generate the output in bedgraph format, in this way:
