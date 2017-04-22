@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  19 APR 2017 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  22 APR 2017 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,196 +587,186 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 [2
 
 ]
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 73--73
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 85--85
 []\OT1/cmtt/m/n/12 fastx_artifacts_filter -Q 33 -v -i gata1.fastq -o gata1_arti
 facts.fastq[] 
  []
 
 
-Overfull \hbox (36.07521pt too wide) in paragraph at lines 73--73
+Overfull \hbox (36.07521pt too wide) in paragraph at lines 85--85
 []\OT1/cmtt/m/n/12 fastx_artifacts_filter -Q 33 -v -i tal1.fastq -o tal1_artifa
 cts.fastq[] 
  []
 
 
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 73--73
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 85--85
 []\OT1/cmtt/m/n/12 fastx_artifacts_filter -Q 33 -v -i input.fastq -o input_arti
 facts.fastq[] 
  []
 
-
-Overfull \hbox (23.7252pt too wide) in paragraph at lines 105--105
+[3]
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 117--117
 []\OT1/cmtt/m/n/12 -i gata1_artifacts_trim.fastq -o gata1_artifacts_trim_qualit
 y.fastq[] 
  []
 
 
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 105--105
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 117--117
 []\OT1/cmtt/m/n/12 -i tal1_artifacts_trim.fastq -o tal1_artifacts_trim_quality.
 fastq[] 
  []
 
 
-Overfull \hbox (23.7252pt too wide) in paragraph at lines 105--105
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 117--117
 []\OT1/cmtt/m/n/12 -i input_artifacts_trim.fastq -o input_artifacts_trim_qualit
 y.fastq[] 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 125--131
-
- []
-
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 211--216
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--216
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--216
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
-[6] [7]
-Overfull \hbox (28.52612pt too wide) in paragraph at lines 250--251
+[7]
+Overfull \hbox (28.52612pt too wide) in paragraph at lines 267--268
 \OT1/cmr/m/n/12 to the num-ber of lines in the \OT1/cmr/m/it/12 gata1[]negative
 []peaks.xls \OT1/cmr/m/n/12 and the \OT1/cmr/m/it/12 tal1[]negative[]peaks.xls
  []
 
 [8]
-Overfull \hbox (19.51057pt too wide) in paragraph at lines 290--291
+Overfull \hbox (19.51057pt too wide) in paragraph at lines 307--308
 []\OT1/cmr/m/n/12 To an-swer this ques-tion we have to in-spect the \OT1/cmr/m/
 it/12 gata1[]diag.xls  \OT1/cmr/m/n/12 and \OT1/cmr/m/it/12 tal1[]diag.xls
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 
-Overfull \hbox (0.18382pt too wide) in paragraph at lines 297--297
+Overfull \hbox (0.18382pt too wide) in paragraph at lines 314--314
 \OT1/cmr/bx/n/17.28 the two tran-scrip-tion fac-tors and those that
  []
 
-
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 308--308
-[]\OT1/cmtt/m/n/12 $ bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -w
-a > int.bed[] 
- []
-
 [9]
-Overfull \hbox (11.52184pt too wide) in paragraph at lines 332--332
+Overfull \hbox (11.52184pt too wide) in paragraph at lines 350--350
 []\OT1/cmr/bx/n/17.28 Displaying the re-sults in the genome browser 
  []
 
 [10] [11]
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 428--428
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 446--446
 []      \OT1/cmtt/m/n/12 bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homework
 bw/gata1.bw[] 
  []
 
-
-Overfull \hbox (42.25021pt too wide) in paragraph at lines 428--428
+[12]
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 446--446
 []      \OT1/cmtt/m/n/12 bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homework
 bw/tal1.bw[] 
  []
 
 
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 428--428
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 446--446
 []      \OT1/cmtt/m/n/12 bigDataUrl=http://bioserver.iit.ieo.eu/~lriva/homework
 bw/input.bw[] 
  []
 
-<browser_tracks.png, id=46, 1272.755pt x 83.31125pt>
+<browser_tracks.png, id=49, 1272.755pt x 83.31125pt>
 File: browser_tracks.png Graphic file (type png)
  <use browser_tracks.png>
-Package pdftex.def Info: browser_tracks.png used on input line 434.
+Package pdftex.def Info: browser_tracks.png used on input line 452.
 (pdftex.def)             Requested size: 448.48112pt x 47.36205pt.
 
-Overfull \hbox (58.48112pt too wide) in paragraph at lines 434--435
+Overfull \hbox (58.48112pt too wide) in paragraph at lines 452--453
  [][] 
  []
 
 
-Overfull \hbox (25.97937pt too wide) in paragraph at lines 442--443
+Overfull \hbox (25.97937pt too wide) in paragraph at lines 460--461
 []\OT1/cmr/m/n/12 One shared peak is for the ge-nomic co-or-di-nates []\OT1/cmt
 t/m/n/12 chrX:53,981,724-53,982,059
  []
 
-[12 <./browser_tracks.png>]
-<browser_int_dense.png, id=52, 1267.73625pt x 83.31125pt>
+<browser_int_dense.png, id=51, 1267.73625pt x 83.31125pt>
 File: browser_int_dense.png Graphic file (type png)
 
 <use browser_int_dense.png>
-Package pdftex.def Info: browser_int_dense.png used on input line 446.
+Package pdftex.def Info: browser_int_dense.png used on input line 464.
 (pdftex.def)             Requested size: 448.49232pt x 47.36205pt.
 
-Overfull \hbox (58.49232pt too wide) in paragraph at lines 446--447
+Overfull \hbox (58.49232pt too wide) in paragraph at lines 464--465
  [][] 
  []
 
-<browser_int_full.png, id=53, 1267.73625pt x 440.64626pt>
+<browser_int_full.png, id=52, 1267.73625pt x 440.64626pt>
 File: browser_int_full.png Graphic file (type png)
 
 <use browser_int_full.png>
-Package pdftex.def Info: browser_int_full.png used on input line 453.
-(pdftex.def)             Requested size: 448.49762pt x 155.88925pt.
-
-Overfull \hbox (58.49762pt too wide) in paragraph at lines 453--454
- [][] 
- []
-
-<browser_spec_dense.png, id=54, 1267.73625pt x 83.31125pt>
-File: browser_spec_dense.png Graphic file (type png)
-
-<use browser_spec_dense.png>
-Package pdftex.def Info: browser_spec_dense.png used on input line 462.
-(pdftex.def)             Requested size: 448.49232pt x 47.36205pt.
-
-Overfull \hbox (58.49232pt too wide) in paragraph at lines 462--463
- [][] 
- []
-
-[13 <./browser_int_dense.png> <./browser_int_full.png> <./browser_spec_dense.pn
-g>] <browser_spec_full.png, id=62, 1267.73625pt x 440.64626pt>
-File: browser_spec_full.png Graphic file (type png)
-
-<use browser_spec_full.png>
-Package pdftex.def Info: browser_spec_full.png used on input line 471.
+Package pdftex.def Info: browser_int_full.png used on input line 471.
 (pdftex.def)             Requested size: 448.49762pt x 155.88925pt.
 
 Overfull \hbox (58.49762pt too wide) in paragraph at lines 471--472
  [][] 
  []
 
-<int_great.png, id=63, 1260.71pt x 206.7725pt>
-File: int_great.png Graphic file (type png)
- <use int_great.png>
-Package pdftex.def Info: int_great.png used on input line 495.
-(pdftex.def)             Requested size: 386.10214pt x 63.3258pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<browser_spec_dense.png, id=53, 1267.73625pt x 83.31125pt>
+File: browser_spec_dense.png Graphic file (type png)
+
+<use browser_spec_dense.png>
+Package pdftex.def Info: browser_spec_dense.png used on input line 480.
+(pdftex.def)             Requested size: 448.49232pt x 47.36205pt.
+
+Overfull \hbox (58.49232pt too wide) in paragraph at lines 480--481
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<spec_gata_great.png, id=64, 1254.6875pt x 194.7275pt>
+[13 <./browser_tracks.png> <./browser_int_dense.png>] [14 <./browser_int_full.p
+ng> <./browser_spec_dense.png>]
+<browser_spec_full.png, id=65, 1267.73625pt x 440.64626pt>
+File: browser_spec_full.png Graphic file (type png)
+
+<use browser_spec_full.png>
+Package pdftex.def Info: browser_spec_full.png used on input line 489.
+(pdftex.def)             Requested size: 448.49762pt x 155.88925pt.
+
+Overfull \hbox (58.49762pt too wide) in paragraph at lines 489--490
+ [][] 
+ []
+
+[15
+
+ <./browser_spec_full.png>] <int_great.png, id=70, 1260.71pt x 206.7725pt>
+File: int_great.png Graphic file (type png)
+
+<use int_great.png>
+Package pdftex.def Info: int_great.png used on input line 520.
+(pdftex.def)             Requested size: 386.10214pt x 63.3258pt.
+ <spec_gata_great.png, id=71, 1254.6875pt x 194.7275pt>
 File: spec_gata_great.png Graphic file (type png)
 
 <use spec_gata_great.png>
-Package pdftex.def Info: spec_gata_great.png used on input line 506.
+Package pdftex.def Info: spec_gata_great.png used on input line 528.
 (pdftex.def)             Requested size: 386.10214pt x 59.92216pt.
+ [16
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14
-
- <./browser_spec_full.png>] [15 <./int_great.png> <./spec_gata_great.png>]
+ <./int_great.png> <./spec_gata_great.png>]
 (./NGS.aux) ) 
 Here is how much of TeX's memory you used:
  3986 strings out of 493014
@@ -796,10 +786,10 @@ fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
 b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on NGS.pdf (15 pages, 233280 bytes).
+Output written on NGS.pdf (16 pages, 235272 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

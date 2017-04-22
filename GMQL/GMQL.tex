@@ -43,7 +43,7 @@ H3K4me1 = COVER(1,ANY; aggregate: BAG(name)) H3K4me1_0;
 PROMOTER = COVER(1,ANY; aggregate: BAG(name)) PROMOTER_0;
 \end{verbatim}
 
-Here I took the promoters by just enforcing the specific annotation\_type. If we wanted to take the promoters explicitly from RefSeq then we would have to correctly set the provider, to extract the TSS of the genes and then to manually update the start and stop attributes in order to construct the promoter regions. This is because RefSeq does not provide promoters directly.
+Here I took the promoters by just enforcing the specific annotation\_type. If we had preferred to take the promoters explicitly from RefSeq then we could have performed the following: correctly set the provider, extract the TSS of the genes and then manually update the start and stop attributes in order to construct the promoter regions. This is because RefSeq does not provide promoters directly.
 
 The COVER operations were performed in order to 'collapse' several experiments and overlapping regions into one single sample per dataset, with no overlapping regions. This is to ease the computation and to avoid replicates.
 
@@ -55,13 +55,15 @@ The COVER operations were performed in order to 'collapse' several experiments a
 H3K4me1_H3K27ac = JOIN(distance<0; output: INT) H3K4me1 H3K27ac;
 \end{verbatim}
 
-Overlapping regions are the ones characterized by having a negative genometric distance. Then, we impose INT as output in order to take the portions of the regions which actually overlap, and only those ones.
+Overlapping regions are the ones characterized by having a negative genometric distance. Then, we impose INT as output in order to take the portions of the regions which actually overlap, and only those ones.\\
 
 \textbf{b. Repressed H3K4me1 regions (i.e. overlapping with H3K27me3 regions)}
 
 \begin{verbatim}
 H3K4me1_H3K27me3 = JOIN(distance<0; output: INT) H3K4me1 H3K27me3;
 \end{verbatim} 
+
+Here the rationale was the same of the previous statement.\\
 
 \textbf{c. Poised H3K4me1 regions (i.e. being simultaneously active and repressed)}
 
@@ -70,7 +72,7 @@ H3K4me1_H3K27ac_H3K27me3 = JOIN(distance<0; output: INT)
             H3K4me1_H3K27ac H3K4me1_H3K27me3;
 \end{verbatim} 
 
-This join highlights the portion of regions which are simultaneously present in all the three starting datasets.
+This join highlights the portion of regions which are simultaneously present in all the three starting datasets.\\
 
 \textbf{d. Active H3K4me1 regions in promoters}
 
@@ -79,7 +81,7 @@ H3K4me1_H3K27ac_PROMOTER = JOIN(distance<0; output: INT)
             H3K4me1_H3K27ac PROMOTER;
 \end{verbatim} 
 
-The needed operation is the same as those above, except that we want to search for overlaps with promoters.
+The needed operation is the same as those above, except that we want to search for overlaps with promoters.\\
 
 \textbf{e. For each region in (d) find the closest H3K4me1 region farther than 10 kb}
 
@@ -89,7 +91,7 @@ H3K4me1_H3K27ac_PROMOTER H3K4me1;
 RES = EXTEND(regionCount AS COUNT()) RES_0;
 \end{verbatim} 
 
-Here it is important to write the join genometric predicates in the correct order, since the filtering on the minimum distance has to be applied before picking the closest region.
+Here it is important to write the join genometric predicates in the correct order, since the filtering on the minimum distance has to be applied before picking the closest region.\\
 
 \textbf{f. Store the last result (e)}
 
@@ -99,7 +101,7 @@ MATERIALIZE RES INTO res;
 
 \textbf{g. Run the created GMQL query and report: running time, obtained number of samples and number of regions in each sample. Can the result include replicated regions? Why?}\\
 
-As far as the running time is concerned, the query took 15 sec in pending state and then about 2 min and 20 sec for running.
+As far as the running time is concerned, the query took 155 seconds.
 
 The query output is made up of just one single sample as expected. This is because we performed a COVER operation for all the input datasets in order to 'collapse' several experiments and overlapping regions into one single sample per dataset, with no overlapping regions. The next operations we applied are not supposed to generate more than one sample, explaining the presence of one single output sample.
 

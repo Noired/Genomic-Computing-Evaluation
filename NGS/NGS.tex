@@ -57,7 +57,19 @@
 	\subsection{}
 	\textbf{What is the length of the reads? Inspect the fastq files and the fastqc report}
 	
-	All the reads have length \textbf{41}. This can be understood by inspecting...
+	All the reads have length \textbf{41}. This can be captured by inspecting the \textit{fastqc\_data.txt} files in \textit{gata1\_fastqc}, \textit{tal1\_fastqc} and \textit{input\_fastqc} generated folders.
+	
+	For all the three files we can read the following:
+	
+	\begin{verbatim}
+	>>Sequence Length Distribution  pass
+	#Length Count
+	41      1.0E7
+	>>END_MODULE
+	\end{verbatim}
+	meaning that the three starting fastq files have all the reads of length 41.
+	
+	The .html fastqc reports cannot be studied because of the problems encountered with the ftp protocol.
 	
 	\section{Filtering the raw data}
 	
@@ -122,12 +134,17 @@
 	\subsection{}
 	\textbf{Compare the results of 3.1) with 1.1) and briefly describe differences}
 	
-	By comparing the generated files \textit{fastqc\_data.txt} for all the couples: input vs input\_artifacts\_trim\_quality, gata1 vs tal1\_artifacts\_trim\_quality and input vs tal1\_artifacts\_trim\_quality, it is possible to notice that, in general, all the filtering operations together greatly enhanced the average quality of the reads. In particular:\\
-	• Each base position has a greater quality, in average\\
-	• The quality on the 'tail' is higher and so the average-quality trend tends to be more constant, i.e. there are no drops anymore\\
-	• The values on the tail are less dispersed around the mean, i.e. the interquartile difference is smaller\\
-	• The 10th percentile on the tail is now much higher than before.\\
-	• The count for N bases on the starting and ending positions is greatly reduced, ad this is because such bases are cleaved off by the trimming operation, being very poor quality bases.\\
+	By comparing the generated files \textit{fastqc\_data.txt} for all the couples:
+	\begin{itemize}
+		\item input \textit{vs} input\_artifacts\_trim\_quality
+		\item gata1 \textit{vs} gata1\_artifacts\_trim\_quality
+		\item tal1 \textit{vs} tal1\_artifacts\_trim\_quality
+	\end{itemize}
+	it is possible to notice that, in general, all the filtering operations together significantly enhanced the average quality of the reads.
+
+	In particular, the quality on the 'tail' is generally higher and less dispersed around its mean value - smaller interquartile difference. This causes the average-quality trend to be more constant, and we can indeed notice there no more heavy drops like before.
+
+	Finally, also consider the 10th percentile on the tail is now generally much higher and the count for N bases on the starting and ending positions is greatly reduced, and this is because such bases are cleaved off by the trimming operation, being very poor quality bases.
 	
 	\subsection{}
 	\textbf{Which sample got the more reads discarded? how many reads still remain for this sample?}
@@ -302,7 +319,8 @@
 	The commands we can use in order to do this are:
 	
 	\begin{verbatim}
-	$ bedtools intersect -a gata1_peaks.bed -b tal1_peaks.bed -wa > int.bed
+	$ bedtools intersect -a gata1_peaks.bed 
+	      -b tal1_peaks.bed -wa > int.bed
 	$ wc -l int.bed
 	1228
 	\end{verbatim}
@@ -324,7 +342,7 @@
 	
 	\begin{verbatim}
 	$ bedtools intersect -a gata1_peaks.bed
-	-b tal1_peaks.bed -v > int_gata1.bed
+	      -b tal1_peaks.bed -v > int_gata1.bed
 	$ wc -l int_gata1.bed
 	1377
 	\end{verbatim}
@@ -488,7 +506,14 @@
 	\subsection{}
 	\textbf{Go to great.stanford.edu and upload the files obtained in 8.1) matching it to the mouse mm9 genome. Compare the motifs identified for the two peak sets; provide their screen shots and comment them briefly}
 	
-	As for the \textit{int\_great.bed} file:
+	As for the \textit{int\_great.bed} file, the reported results (figure \ref{fig:int_great}) correspond to the promoter motifs where a \textbf{joint} gata1 and tal1 binding is observed.
+	
+	As for the \textit{spec\_gata\_great.bed} file, the reported results (figure \ref{fig:spec_gata_great}) correspond to the promoter motifs where a \textbf{specific} gata1 binding is observed.
+	
+	The first motifs for both the two GREAT jobs have quite good pvalues.
+	
+	
+	\clearpage
 	
 	\begin{figure}[h]
 		\centering
@@ -497,9 +522,6 @@
 		\label{fig:int_great}
 	\end{figure}
 	
-	The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where \textit{both} gata1 and tal1 bind.
-	
-	As for the \textit{spec\_gata\_great.bed} file:
 	
 	\begin{figure}[h]
 		\centering
@@ -507,9 +529,5 @@
 		\caption{Predicted promoter motifs for the regions where only gata1 transcription factors binds.}
 		\label{fig:spec_gata_great}
 	\end{figure}
-	
-	The genes reported should be the ones sharing in their promoter the motifs corresponding to sequence patterns where, specifically, \textit{only} gata1 binds.
-	
-	The first motifs for both the two GREAT jobs have quite good pvalues.
 	
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  13 APR 2017 00:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.4)  21 APR 2017 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,6 +524,11 @@ Overfull \hbox (5.2002pt too wide) in paragraph at lines 56--56
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
 Overfull \hbox (7.67625pt too wide) in paragraph at lines 60--61
 []\OT1/cmr/bx/n/12 b. Re-pressed H3K4me1 re-gions (i.e. over-lap-ping with H3K2
 7me3
@@ -536,53 +541,73 @@ Overfull \hbox (17.5502pt too wide) in paragraph at lines 64--64
  []
 
 
-Overfull \hbox (3.3598pt too wide) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+
+Overfull \hbox (3.3598pt too wide) in paragraph at lines 75--76
 []\OT1/cmr/m/n/12 This join high-lights the por-tion of re-gions which are si-m
 ul-ta-ne-ously present
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 [3]
-Overfull \hbox (23.7252pt too wide) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+[4]
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 139--139
 []\OT1/cmtt/m/n/12 JUN_BASELINE_0 = SELECT(cell == 'K562' AND antibody_target =
 = 'JUN'[] 
  []
 
-[4]
-Overfull \hbox (17.5502pt too wide) in paragraph at lines 137--137
+
+Overfull \hbox (17.5502pt too wide) in paragraph at lines 139--139
 []\OT1/cmtt/m/n/12 JUN_BASELINE = COVER(1, ANY; aggregate: BAG(name)) JUN_BASEL
 INE_0;[] 
  []
 
 
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 137--137
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 139--139
 []\OT1/cmtt/m/n/12 JUN_IFNa30_0 = SELECT(cell == 'K562' AND antibody_target == 
 'JUN'[] 
  []
 
 
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 137--137
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 139--139
 []\OT1/cmtt/m/n/12 GENE = SELECT(provider == 'RefSeq' AND annotation_type == 'g
 ene')[] 
  []
 
 
-Overfull \hbox (79.30023pt too wide) in paragraph at lines 150--150
+Overfull \hbox (79.30023pt too wide) in paragraph at lines 152--152
 []\OT1/cmtt/m/n/12 JUN_BASELINE_IFNa30 = JOIN(distance<0; output: INT) JUN_BASE
 LINE JUN_IFNa30;[] 
  []
 
-
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 159--159
+[5]
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 161--161
 []\OT1/cmtt/m/n/12 RES = SELECT(region: count_PROMOTER_JUN_BASELINE_IFNa30>0) R
 ES_0;[] 
  []
 
-[5] (./GMQL.aux) ) 
+[6] (./GMQL.aux) ) 
 Here is how much of TeX's memory you used:
  2187 strings out of 493014
  29043 string characters out of 6133352
@@ -590,16 +615,16 @@ Here is how much of TeX's memory you used:
  5718 multiletter control sequences out of 15000+600000
  6846 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,23p,418b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,23p,429b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on GMQL.pdf (5 pages, 67927 bytes).
+Output written on GMQL.pdf (6 pages, 68207 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
